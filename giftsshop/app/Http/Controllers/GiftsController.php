@@ -11,8 +11,8 @@ class GiftsController extends Controller
 {
     public function index()
     {
-        $product = ElecRepos::getAllProductWithCateName();
-        return view('electronics.product.index',
+        $product = GiftsRepos::getAllProductWithCateName();
+        return view('electronics.gifts.index',
             [
                 'product' => $product
             ]);
@@ -21,8 +21,8 @@ class GiftsController extends Controller
     public function show($Elec_id)
     {
 
-        $product = ElecRepos::getElecByID($Elec_id);
-        return view('electronics.product.show',
+        $product = GiftsRepos::getElecByID($Elec_id);
+        return view('AdminSite.gifts.show',
             [
                 'product' => $product[0]
             ]
@@ -34,7 +34,7 @@ class GiftsController extends Controller
         $category = CateRepos::getAllCate();
 //        $product = ElecRepos::getAllElec();
         return view(
-            'electronics.product.new',
+            'AdminSite.gifts.new',
             ["product" => (object)[
                 'Gifts_id' => '',
                 'Gifts_Name' => '',
