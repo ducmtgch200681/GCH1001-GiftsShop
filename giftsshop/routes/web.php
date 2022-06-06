@@ -98,42 +98,42 @@ Route::group(['prefix' => 'Category'], function () {
 //Product
 Route::group(['prefix' => 'Gifts'], function () {
     Route::get('', [
-        'uses' => 'GiftsControllerWithRepos@index',
-        'as' => 'gifts.index'
+        'uses' => 'GiftsController@index',
+        'as' => 'product.index'
     ]);
 
     Route::get('show/{Elec_id}',[
-        'uses' => 'GiftsControllerWithRepos@show',
-        'as' => 'gifts.show'
+        'uses' => 'GiftsController@show',
+        'as' => 'product.show'
     ]);
 
     Route::get('create',[
-        'uses' => 'GiftsControllerWithRepos@create',
-        'as' => 'gifts.create'
+        'uses' => 'GiftsController@create',
+        'as' => 'product.create'
     ]);
 
     Route::post('create',[
-        'uses' => 'GiftsControllerWithRepos@store',
-        'as' => 'gifts.store'
+        'uses' => 'GiftsController@store',
+        'as' => 'product.store'
     ]);
 
     Route::get('update/{Elec_id}',[
-        'uses' => 'GiftsControllerWithRepos@edit',
-        'as' => 'gifts.edit'
+        'uses' => 'GiftsController@edit',
+        'as' => 'product.edit'
     ]);
 
     Route::post('update/{Elec_id}',[
-        'uses' => 'GiftsControllerWithRepos@update',
-        'as' => 'gifts.update'
+        'uses' => 'GiftsController@update',
+        'as' => 'product.update'
     ]);
 
     Route::get('delete/{Elec_id}', [
-        'uses' => 'GiftsControllerWithRepos@confirm',
-        'as' => 'gifts.confirm'
+        'uses' => 'GiftsController@confirm',
+        'as' => 'product.confirm'
     ]);
 
     Route::post('delete/{Elec_id}',[
-        'uses' => 'GiftsControllerWithRepos@destroy',
-        'as' => 'gifts.destroy'
+        'uses' => 'GiftsController@destroy',
+        'as' => 'product.destroy'
     ]);
 });

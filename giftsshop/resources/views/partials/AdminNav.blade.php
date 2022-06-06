@@ -35,10 +35,10 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="formatDropdown">
                         <a class="dropdown-item"
-{{--                           href="{{route('product.index')}}"--}}
+                           href="{{route('product.index')}}"
                         >View All Gifts</a>
                         <a class="dropdown-item"
-{{--                           href="{{route('product.create')}}"--}}
+                           href="{{route('product.create')}}"
                         >New Gifts</a>
                     </div>
                 </li>

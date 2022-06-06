@@ -12,16 +12,16 @@ class GiftsController extends Controller
     public function index()
     {
         $product = GiftsRepos::getAllProductWithCateName();
-        return view('electronics.gifts.index',
+        return view('AdminSite.gifts.index',
             [
                 'product' => $product
             ]);
     }
 
-    public function show($Elec_id)
+    public function show($Gifts_id)
     {
 
-        $product = GiftsRepos::getElecByID($Elec_id);
+        $product = GiftsRepos::getGiftsByID($Gifts_id);
         return view('AdminSite.gifts.show',
             [
                 'product' => $product[0]
@@ -32,7 +32,7 @@ class GiftsController extends Controller
     public function create()
     {
         $category = CateRepos::getAllCate();
-//        $product = ElecRepos::getAllElec();
+//        $product = GiftsRepos::getAllGifts();
         return view(
             'AdminSite.gifts.new',
             ["product" => (object)[
@@ -53,88 +53,88 @@ class GiftsController extends Controller
     public function store(Request $request)
     {
         $this->formValidatePro($request)->validate();
-        $path = $request->file('Elec_Images')->store('public');
+        $path = $request->file('Gifts_Images')->store('public');
 
         $product = (object)[
-            'Elec_Name' => $request->input('Elec_Name'),
+            'Gifts_Name' => $request->input('Gifts_Name'),
             'Cate_id' => $request->input('Cate_id'),
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
-            'Elec_Description' => $request->input('Elec_Description'),
-            'Elec_Images' => substr($path, 7)
+            'Gifts_Description' => $request->input('Gifts_Description'),
+            'Gifts_Images' => substr($path, 7)
         ];
 
-        $newElec_id = GiftsRepos::insert($product);
+        $newGift_id = GiftsRepos::insert($product);
         return redirect()
-            ->action('ElectronicsControllerWithRepos@index')
-            ->with('msg', 'New Electric with id: ' . $newElec_id . ' has been inserted');
+            ->action('GiftsController@index')
+            ->with('msg', 'New Gift with id: ' . $newGift_id . ' has been inserted');
 
     }
 
-    public function edit($Elec_id)
+    public function edit($Gift_id)
     {
-        $product = GiftsRepos::getGiftsByID($Elec_id);
+        $product = GiftsRepos::getGiftsByID($Gift_id);
         $category = CateRepos::getAllCateName();
 
         return view(
-            'electronics.product.update',
+            'AdminSite.gifts.update',
             ["product" => $product[0], "category" => $category]);
     }
 
-    public function update(Request $request, $Elec_id)
-    {
-        if ($Elec_id != $request->input('Elec_id')) {
-            return redirect()->action('ElectronicsControllerWithRepos@index');
-        }
+//    public function update(Request $request, $Gifts_id)
+//    {
+//        if ($Gifts_id != $request->input('Gifts_id')) {
+//            return redirect()->action('GiftsController@index');
+//        }
+//
+//        $this->formValidatePro($request)->validate();
+//
+//        $path = $request->file('Gifts_Images')->store('public');
+//
+//        $product = (object)[
+//            'Gifts_id' => $request->input('Gift_id'),
+//            'Gifts_Name' => $request->input('Gift_Name'),
+//            'Cate_id' => $request->input('Cate_id'),
+//            'Price' => $request->input('Price'),
+//            'Brand' => $request->input('Brand'),
+//            'Gifts_Description' => $request->input('Gifts_Description'),
+//            'Gifts_Images' => substr($path, 7)
+//        ];
+//        GiftsRepos::update($product);
+//
+//        return redirect()->action('GiftsController@index');
+//
+//    }
 
-        $this->formValidatePro($request)->validate();
-
-        $path = $request->file('Elec_Images')->store('public');
-
-        $product = (object)[
-            'Elec_id' => $request->input('Elec_id'),
-            'Elec_Name' => $request->input('Elec_Name'),
-            'Cate_id' => $request->input('Cate_id'),
-            'Price' => $request->input('Price'),
-            'Brand' => $request->input('Brand'),
-            'Elec_Description' => $request->input('Elec_Description'),
-            'Elec_Images' => substr($path, 7)
-        ];
-        GiftsRepos::update($product);
-
-        return redirect()->action('ElectronicsControllerWithRepos@index');
-
-    }
-
-    public function confirm($Elec_id){
-        $product = GiftsRepos::getElecByID($Elec_id);
-
-        return view('electronics.product.confirm',
-            [
-                'product' => $product[0]
-            ]
-        );
-    }
-
-    public function destroy(Request $request, $Elec_id)
-    {
-
-
-        GiftsRepos::delete($Elec_id);
-
-        return redirect()->action('ElectronicsControllerWithRepos@index');
-    }
+//    public function confirm($Gift_id){
+//        $product = GiftsRepos::getElecByID($Gift_id);
+//
+//        return view('AdminSite.gifts.confirm',
+//            [
+//                'product' => $product[0]
+//            ]
+//        );
+//    }
+//
+//    public function destroy(Request $request, $Gift_id)
+//    {
+//
+//
+//        GiftsRepos::delete($Gift_id);
+//
+//        return redirect()->action('GiftsController@index');
+//    }
 
     private function formValidatePro(Request $request)
     {
         return Validator::make(
             $request->all(),
             [
-                'Elec_Name' => ['required'],
+                'Gift_Name' => ['required'],
                 'Price' => ['required'],
                 'Brand' => ['required'],
-                'Elec_Description' => ['required'],
-                'Elec_Images' => ['required'],
+                'Gift_Description' => ['required'],
+                'Gift_Images' => ['required'],
             ]
         );
     }

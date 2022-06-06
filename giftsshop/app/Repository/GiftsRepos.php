@@ -6,17 +6,16 @@ use Illuminate\Support\Facades\DB;
 
 class GiftsRepos
 {
-
     public static function getAllProductWithCateName(){
         $sql =' select p.*, c.Cate_Name as CategoryName ';
         $sql .='from gifts as p ';
-        $sql .='join category as c on p.Cate_id = c.Gifts_id ';
+        $sql .='join category as c on p.Cate_id = c.Cate_id ';
         $sql .='order by p.Gifts_Name ';
 
         return DB::select($sql);
     }
 
-    public static function getAllElec()
+    public static function getAllGifts()
     {
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
@@ -25,7 +24,7 @@ class GiftsRepos
         return DB::select ($sql);
     }
 
-    public static function getElecByID($Elec_id)
+    public static function getGiftsByID($Elec_id)
     {
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
@@ -49,23 +48,23 @@ class GiftsRepos
         }
     }
 
-    public static function update($product)
-    {
-        $sql = 'update gifts ';
-        $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
-        $sql .= 'where Gifts_id = ? ';
+//    public static function update($product)
+//    {
+//        $sql = 'update gifts ';
+//        $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
+//        $sql .= 'where Gifts_id = ? ';
+//
+//        DB::update($sql, [$product->Gifts_Name, $product->Cate_id, $product->Price, $product->Brand,
+//            $product->Gifts_Description, $product->Gifts_Images, $product->Gifts_id]);
+//    }
 
-        DB::update($sql, [$product->Gifts_Name, $product->Cate_id, $product->Price, $product->Brand,
-            $product->Gifts_Description, $product->Gifts_Images, $product->Gifts_id]);
-    }
 
-
-    public static function delete($Elec_id){
-        $sql = 'delete from gifts ';
-        $sql .= 'where Gifts_id = ? ';
-
-        return DB::delete($sql, [$Elec_id]);
-    }
+//    public static function delete($Elec_id){
+//        $sql = 'delete from gifts ';
+//        $sql .= 'where Gifts_id = ? ';
+//
+//        return DB::delete($sql, [$Elec_id]);
+//    }
     public static function selectCate($Cate_id){
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
