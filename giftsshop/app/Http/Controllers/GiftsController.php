@@ -135,12 +135,12 @@ class GiftsController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'Gift_Name' => ['required'],
+                'Gifts_Name' => ['required'],
                 'Cate_id' => ['required'],
                 'Price' => ['required'],
                 'Brand' => ['required'],
-                'Gift_Description' => ['required'],
-                'Gift_Images' => ['required'],
+                'Gifts_Description' => ['required'],
+                'Gifts_Images' => ['required'],
             ]
         );
     }
