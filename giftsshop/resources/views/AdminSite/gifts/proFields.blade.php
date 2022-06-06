@@ -5,7 +5,7 @@
 </div>
 
 @php
-    $Cate_id = old('category') ?? $product->Cate_id?? null;
+    $Cate_id = old('Cate_id') ?? $product->Cate_id?? null;
 @endphp
 
 <div class="form-group">
