@@ -5,26 +5,30 @@ namespace App\Http\Controllers;
 use App\Repository\CateRepos;
 use App\Repository\GiftsRepos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class GiftsController extends Controller
 {
     public function index()
     {
-        $product = GiftsRepos::getAllProductWithCateName();
+        $product = GiftsRepos::getAllGifts();
         return view('AdminSite.gifts.index',
             [
                 'product' => $product
             ]);
     }
 
+
     public function show($Gifts_id)
     {
 
         $product = GiftsRepos::getGiftsByID($Gifts_id);
+        $category = CateRepos::getCatenamebyGiftsID($Gifts_id);
         return view('AdminSite.gifts.show',
             [
-                'product' => $product[0]
+                'product' => $product[0],
+                'category' => $category[0]
             ]
         );
     }
@@ -52,8 +56,9 @@ class GiftsController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request->all());
         $this->formValidatePro($request)->validate();
-//        $path = $request->file('Gifts_Images')->store('public');
+        $path = $request->file('Gifts_Images')->store('public/Images');
 
         $product = (object)[
             'Gifts_Name' => $request->input('Gifts_Name'),
@@ -61,7 +66,7 @@ class GiftsController extends Controller
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
-//            'Gifts_Images' => substr($path, 7)
+            'Gifts_Images' => substr($path, 7)
         ];
 
         $newGift_id = GiftsRepos::insert($product);
@@ -107,7 +112,7 @@ class GiftsController extends Controller
 //    }
 
 //    public function confirm($Gift_id){
-//        $product = GiftsRepos::getElecByID($Gift_id);
+//        $product = GiftsRepos::getGiftsByID($Gift_id);
 //
 //        return view('AdminSite.gifts.confirm',
 //            [
@@ -131,10 +136,11 @@ class GiftsController extends Controller
             $request->all(),
             [
                 'Gift_Name' => ['required'],
+                'Cate_id' => ['required'],
                 'Price' => ['required'],
                 'Brand' => ['required'],
                 'Gift_Description' => ['required'],
-                'Gift_Images' => [''],
+                'Gift_Images' => ['required'],
             ]
         );
     }

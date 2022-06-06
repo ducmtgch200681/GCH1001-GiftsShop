@@ -102,7 +102,7 @@ Route::group(['prefix' => 'Gifts'], function () {
         'as' => 'product.index'
     ]);
 
-    Route::get('show/{Elec_id}',[
+    Route::get('show/{Gifts_id}',[
         'uses' => 'GiftsController@show',
         'as' => 'product.show'
     ]);
@@ -117,22 +117,22 @@ Route::group(['prefix' => 'Gifts'], function () {
         'as' => 'product.store'
     ]);
 
-//    Route::get('update/{Elec_id}',[
+//    Route::get('update/{Gifts_id}',[
 //        'uses' => 'GiftsController@edit',
 //        'as' => 'product.edit'
 //    ]);
 
-//    Route::post('update/{Elec_id}',[
+//    Route::post('update/{Gifts_id}',[
 //        'uses' => 'GiftsController@update',
 //        'as' => 'product.update'
 //    ]);
 
-//    Route::get('delete/{Elec_id}', [
+//    Route::get('delete/{Gifts_id}', [
 //        'uses' => 'GiftsController@confirm',
 //        'as' => 'product.confirm'
 //    ]);
 
-//    Route::post('delete/{Elec_id}',[
+//    Route::post('delete/{Gifts_id}',[
 //        'uses' => 'GiftsController@destroy',
 //        'as' => 'product.destroy'
 //    ]);

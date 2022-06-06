@@ -22,7 +22,7 @@
             @foreach($product as $p)
                 <tr>
                     <td>{{$p->Gifts_Name}}</td>
-                    <td>{{$p->Cate_Name}}</td>
+                    <td>{{$p->Cate_id}}</td>
                     <td>{{$p->Price}}</td>
                     <td>{{$p->Brand}}</td>
                     <td>
@@ -32,12 +32,14 @@
                     </td>
                     <td>
                         <a type="button" class="btn btn-success btn-sm"
-                           href="{{route('product.edit', ['Gifts_id' => $p->Gifts_id])}}">Edit
+{{--                           href="{{route('product.edit', ['Gifts_id' => $p->Gifts_id])}}"--}}
+                        >Edit
                         </a>
                     </td>
                     <td>
                         <a type="button" class="btn btn-danger btn-sm"
-                           href="{{route('product.confirm', ['Gifts_id' => $p->Gifts_id])}}">Delete
+{{--                           href="{{route('product.confirm', ['Gifts_id' => $p->Gifts_id])}}"--}}
+                        >Delete
                         </a>
                     </td>
                 </tr>

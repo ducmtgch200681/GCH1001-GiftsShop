@@ -15,15 +15,6 @@ class CateRepos
         return DB::select ($sql);
     }
 
-    public static function getAllCateName()
-    {
-        $sql = 'select ca.* ';
-        $sql .= 'from category as ca ';
-        $sql .= 'order by ca.Cate_Name ';
-
-        return DB::select ($sql);
-    }
-
     public static function getCateById($Cate_id)
     {
         $sql = 'select ca.* ';
@@ -32,6 +23,19 @@ class CateRepos
 
         return DB::select($sql, [$Cate_id]);
     }
+
+
+
+    public static function getCatenamebyGiftsID($Gifts_id)
+    {
+        $sql = 'select c.* ';
+        $sql .= 'from category as c ';
+        $sql .= 'join gifts as p on c.Cate_Id = p.Cate_id ';
+        $sql .= 'where p.Gifts_id = ? ';
+
+        return DB::select($sql, [$Gifts_id]);
+    }
+
 
     public static function insert($category)
     {

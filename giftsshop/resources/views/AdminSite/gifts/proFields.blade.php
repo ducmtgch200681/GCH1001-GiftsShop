@@ -9,7 +9,7 @@
 @endphp
 
 <div class="form-group">
-    <label for="Cate_id" class="font-weight-bold">Category ID</label>
+    <label for="Cate_id" class="font-weight-bold">Category</label>
     <select name="Cate_id" class="form-control" id="Cate_id" required>
         <option value="0">Please select a category</option>
         @foreach($category as $c)
@@ -33,7 +33,7 @@
 
 <div class="form-group">
     <label for="Gifts_Description" class="font-weight-bold">Description</label>
-    <input type="text" class="form-control" id="Gifts_Description" name="Elec_Description" value="{{old('Gifts_Description')?? $product->Gifts_Description}}">
+    <input type="text" class="form-control" id="Gifts_Description" name="Gifts_Description" value="{{old('Gifts_Description')?? $product->Gifts_Description}}">
 </div>
 
 <div class="form-group">

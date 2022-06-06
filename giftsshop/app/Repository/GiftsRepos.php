@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\DB;
 
 class GiftsRepos
 {
-    public static function getAllProductWithCateName(){
-        $sql =' select p.*, c.Cate_Name as CategoryName ';
-        $sql .='from gifts as p ';
-        $sql .='join category as c on p.Cate_id = c.Cate_id ';
-        $sql .='order by p.Gifts_Name ';
-
-        return DB::select($sql);
-    }
+//    public static function getAllProductWithCateName(){
+//        $sql =' select p.*, c.Cate_Name as CategoryName ';
+//        $sql .='from gifts as p ';
+//        $sql .='join category as c on p.Cate_Id = c.Cate_id ';
+//        $sql .='order by p.Gifts_Name ';
+//
+//        return DB::select($sql);
+//    }
 
     public static function getAllGifts()
     {
@@ -24,14 +24,16 @@ class GiftsRepos
         return DB::select ($sql);
     }
 
-    public static function getGiftsByID($Elec_id)
+    public static function getGiftsByID($Gifts_id)
     {
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
         $sql .= 'where p.Gifts_id = ? ';
 
-        return DB::select($sql, [$Elec_id]);
+        return DB::select($sql, [$Gifts_id]);
     }
+
+
 
     public static function insert($product)
     {
@@ -65,10 +67,12 @@ class GiftsRepos
 //
 //        return DB::delete($sql, [$Elec_id]);
 //    }
-    public static function selectCate($Cate_id){
-        $sql = 'select p.* ';
-        $sql .= 'from gifts as p ';
-        $sql .= 'where p.Gifts_id = ? ';
-        return DB::select($sql, [$Cate_id]);
-    }
+
+
+//    public static function selectCate($Cate_id){
+//        $sql = 'select p.* ';
+//        $sql .= 'from gifts as p ';
+//        $sql .= 'where p.Gifts_id = ? ';
+//        return DB::select($sql, [$Cate_id]);
+//    }
 }
