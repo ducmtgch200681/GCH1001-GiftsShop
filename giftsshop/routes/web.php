@@ -117,23 +117,23 @@ Route::group(['prefix' => 'Gifts'], function () {
         'as' => 'product.store'
     ]);
 
-    Route::get('update/{Elec_id}',[
-        'uses' => 'GiftsController@edit',
-        'as' => 'product.edit'
-    ]);
+//    Route::get('update/{Elec_id}',[
+//        'uses' => 'GiftsController@edit',
+//        'as' => 'product.edit'
+//    ]);
 
-    Route::post('update/{Elec_id}',[
-        'uses' => 'GiftsController@update',
-        'as' => 'product.update'
-    ]);
+//    Route::post('update/{Elec_id}',[
+//        'uses' => 'GiftsController@update',
+//        'as' => 'product.update'
+//    ]);
 
-    Route::get('delete/{Elec_id}', [
-        'uses' => 'GiftsController@confirm',
-        'as' => 'product.confirm'
-    ]);
+//    Route::get('delete/{Elec_id}', [
+//        'uses' => 'GiftsController@confirm',
+//        'as' => 'product.confirm'
+//    ]);
 
-    Route::post('delete/{Elec_id}',[
-        'uses' => 'GiftsController@destroy',
-        'as' => 'product.destroy'
-    ]);
+//    Route::post('delete/{Elec_id}',[
+//        'uses' => 'GiftsController@destroy',
+//        'as' => 'product.destroy'
+//    ]);
 });

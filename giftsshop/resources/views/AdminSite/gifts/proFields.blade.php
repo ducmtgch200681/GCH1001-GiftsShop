@@ -1,7 +1,7 @@
 <input type="hidden" name="Gifts_id" value="{{old('Gifts_id')?? $product->Gifts_id}}">
 <div class="form-group">
     <label for="Gifts_Name" class="font-weight-bold">Name</label>
-    <input type="text" class="form-control" id="Gifts_Name" name="Gifts_Name" value="{{old('Elec_Name')?? $product->Gifts_Name}}">
+    <input type="text" class="form-control" id="Gifts_Name" name="Gifts_Name" value="{{old('Gifts_Name')?? $product->Gifts_Name}}">
 </div>
 
 @php

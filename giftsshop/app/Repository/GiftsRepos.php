@@ -40,7 +40,7 @@ class GiftsRepos
         $sql .= 'values (?, ?, ?, ?, ?, ?) ';
 
         $result =  DB::insert($sql, [$product->Gifts_Name, $product->Cate_id,
-            $product->Price, $product->Brand, $product->Elec_Description, $product->Elec_Images]);
+            $product->Price, $product->Brand, $product->Gifts_Description, $product->Gifts_Images]);
         if($result){
             return DB::getPdo()->lastInsertId();
         } else {

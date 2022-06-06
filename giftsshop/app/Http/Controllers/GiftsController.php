@@ -32,7 +32,7 @@ class GiftsController extends Controller
     public function create()
     {
         $category = CateRepos::getAllCate();
-//        $product = GiftsRepos::getAllGifts();
+
         return view(
             'AdminSite.gifts.new',
             ["product" => (object)[
@@ -53,7 +53,7 @@ class GiftsController extends Controller
     public function store(Request $request)
     {
         $this->formValidatePro($request)->validate();
-        $path = $request->file('Gifts_Images')->store('public');
+//        $path = $request->file('Gifts_Images')->store('public');
 
         $product = (object)[
             'Gifts_Name' => $request->input('Gifts_Name'),
@@ -61,7 +61,7 @@ class GiftsController extends Controller
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
-            'Gifts_Images' => substr($path, 7)
+//            'Gifts_Images' => substr($path, 7)
         ];
 
         $newGift_id = GiftsRepos::insert($product);
@@ -71,15 +71,15 @@ class GiftsController extends Controller
 
     }
 
-    public function edit($Gift_id)
-    {
-        $product = GiftsRepos::getGiftsByID($Gift_id);
-        $category = CateRepos::getAllCateName();
-
-        return view(
-            'AdminSite.gifts.update',
-            ["product" => $product[0], "category" => $category]);
-    }
+//    public function edit($Gift_id)
+//    {
+//        $product = GiftsRepos::getGiftsByID($Gift_id);
+//        $category = CateRepos::getAllCateName();
+//
+//        return view(
+//            'AdminSite.gifts.update',
+//            ["product" => $product[0], "category" => $category]);
+//    }
 
 //    public function update(Request $request, $Gifts_id)
 //    {
@@ -134,7 +134,7 @@ class GiftsController extends Controller
                 'Price' => ['required'],
                 'Brand' => ['required'],
                 'Gift_Description' => ['required'],
-                'Gift_Images' => ['required'],
+                'Gift_Images' => [''],
             ]
         );
     }
