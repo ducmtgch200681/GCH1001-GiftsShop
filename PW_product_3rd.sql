@@ -26,10 +26,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `Ad_Email` varchar(100) NOT NULL,
   `Ad_DoB` date NOT NULL,
   PRIMARY KEY (`Ad_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table giftsshop.admin: ~0 rows (approximately)
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`Ad_id`, `Ad_Fullname`, `Ad_Username`, `Ad_password`, `Ad_Email`, `Ad_DoB`) VALUES
+	(1, 'Nguyen Van Tuan', 'TuanT', '123456', 'tuannvgch200546@gmail.com', '2002-12-13'),
+	(2, 'Mai The Duc', 'DucD', '111111', 'ducgchddd200@gmail.com', '2002-01-01'),
+	(3, 'Cao Viet Hoang', 'HoangH', '222222', 'HoangHgch600@gmail.com', '2002-02-02');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 -- Dumping structure for table giftsshop.category
@@ -62,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `gifts` (
   CONSTRAINT `FK_Cateid` FOREIGN KEY (`Cate_id`) REFERENCES `category` (`Cate_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table giftsshop.gifts: ~1 rows (approximately)
+-- Dumping data for table giftsshop.gifts: ~2 rows (approximately)
 /*!40000 ALTER TABLE `gifts` DISABLE KEYS */;
 INSERT INTO `gifts` (`Gifts_id`, `Gifts_Name`, `Cate_id`, `Price`, `Brand`, `Gifts_Description`, `Gifts_Images`) VALUES
 	(5, 'AH', 1, '$999', 'German', 'meow', 'Images/W3EgCKRWZyVXESe9SCbdhE1G2EHHEzeMHlBAdVYa.jpg'),
