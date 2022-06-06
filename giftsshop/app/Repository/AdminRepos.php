@@ -10,7 +10,7 @@ class AdminRepos
     {
         $sql = 'select a.* ';
         $sql .= 'from admin as a ';
-        $sql .= 'order by a.Ad_id ';
+        $sql .= 'order by a.Ad_Fullname ';
 
         return DB::select ($sql);
      }
@@ -26,19 +26,12 @@ class AdminRepos
 
     public static function update($admin){
         $sql = 'update admin ';
-        $sql .= 'Ad_Username = ?, Ad_password = ?, Ad_Email = ?, Ad_DoB = ?';
+        $sql .= 'set Ad_Fullname = ?, Ad_Username = ?, Ad_password = ?, Ad_Email = ?, Ad_DoB = ?';
         $sql .= 'where Ad_id = ? ';
 
-        DB::update($sql, [$admin->Ad_id, $admin->Ad_Usename, $admin->Ad_password, $admin->Ad_DoB]);
+        DB::update($sql, [$admin->Ad_Fullname, $admin->Ad_Username,
+            $admin->Ad_password, $admin->Ad_Email, $admin->Ad_DoB, $admin->Ad_id]);
 
     }
-
-    //delete
-//    public static function delete($Ad_id){
-//        $sql = 'delete from admin ';
-//        $sql .= 'where Ad_id = ? ';
-//
-//        DB::delete($sql, [$Ad_id]);
-//    }
 
 }

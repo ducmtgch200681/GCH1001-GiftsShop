@@ -28,53 +28,39 @@ class AdminController extends Controller
         );
     }
 
+    public function edit($Ad_id){
+        $admin = AdminRepos::getAdminById($Ad_id);
+        return view('AdminSite.admin.update', ["admin" => $admin[0]]);
+    }
 
-    public function store(Request $request)
-    {
-        $this->formValidateAd($request)->validate();
-
+    public function update(Request $request, $Ad_id){
+        if($Ad_id != $request->input('Ad_id')){
+            return redirect()->action('AdminController@index');
+        }
+        $this->formValidate($request)->validate();
         $admin = (object)[
+            'Ad_id' => $request->input('Ad_id'),
             'Ad_Fullname' => $request->input('Ad_Fullname'),
             'Ad_Username' => $request->input('Ad_Username'),
             'Ad_password' => $request->input('Ad_password'),
             'Ad_Email' => $request->input('Ad_Email'),
-            'Ad_DoB' => $request->input('Ad_DoB'),
-
+            'Ad_DoB' => $request->input('Ad_DoB')
         ];
-
-        $newAd_Id = AdminRepos::insert($admin);
-        return redirect()
-            ->action('AdminController@index')
-            ->with('msg', 'New book with id: ' . $newAd_Id . ' has been inserted');
+        AdminRepos::update($admin);
+        return redirect()->action('AdminController@index')
+            ->with('msg', 'update successfully');
     }
 
-    private function formValidateAd(Request $request)
-    {
+
+    public function formValidate($request){
         return Validator::make(
             $request->all(),
             [
                 'Ad_Fullname' => ['required'],
-                'Ad_Email' => ['required', 'email'],
-                'Ad_DoB' => ['required', 'date'],
-                'Ad_password' => ['required',
-                    function ($attribute, $value, $fail) use ($request) {
-                        $username = $request->input('Ad_Username');
-                        $account = AdminRepos::getAllAdmin();
-                        $n=0;
-                        for ($i = 0; $i < count($account); $i++) {
-                            if ($username == $account[$i]->Ad_Username) {
-                                $value = sha1($request->input('Ad_password'));
-                                if ($value != $account[$i]->Ad_password) {
-                                    $n++;
-                                    break;
-                                }
-                            }
-                        }
-                        if($n!=0)
-                        {
-                            $fail('Password is incorrect');
-                        }
-                    }],
+                'Ad_Username' => ['required', 'ends-with:T,D,H,I,O'],
+                'Ad_Email' => ['required', 'email:rfc,dns'],
+                'Ad_DoB' => ['required', 'before:2004-01-01'],
+                'Ad_password' => ['required']
             ]
         );
     }
