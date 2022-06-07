@@ -26,13 +26,13 @@
                     </td>
                     <td>
                         <a type="button" class="btn btn-success btn-sm"
-{{--                           href="{{route('category.edit', ['Cate_id' => $ca->Cate_id])}}"--}}
+                           href="{{route('category.edit', ['Cate_id' => $ca->Cate_id])}}"
                         >Edit
                         </a>
                     </td>
                     <td>
                         <a type="button" class="btn btn-danger btn-sm"
-{{--                           href="{{route('category.confirm', ['Cate_id' => $ca->Cate_id])}}"--}}
+                           href="{{route('category.confirm', ['Cate_id' => $ca->Cate_id])}}"
                         >Delete
                         </a>
                     </td>
