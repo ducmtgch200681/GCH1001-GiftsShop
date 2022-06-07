@@ -57,7 +57,7 @@ class GiftsController extends Controller
     {
 //        dd($request->all());
         $this->formValidatePro($request)->validate();
-        $path = $request->file('Gifts_Images')->store('public/Images');
+        $path = $request->file('Gifts_Images')->store('public');
 
         $product = (object)[
             'Gifts_Name' => $request->input('Gifts_Name'),
@@ -93,7 +93,7 @@ class GiftsController extends Controller
 
         $this->formValidatePro($request)->validate();
 
-        $path = $request->file('Gifts_Images')->store('public');
+        $path = $request->file('Gifts_Images')->store('public/Images');
 
         $product = (object)[
             'Gifts_id' => $request->input('Gift_id'),
@@ -102,7 +102,7 @@ class GiftsController extends Controller
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
-            'Gifts_Images' => substr($path, 7)
+            'Gifts_Images' => substr($path, 0)
         ];
         GiftsRepos::update($product);
 
