@@ -6,6 +6,7 @@ use App\Repository\CateRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+
 class CategoryController extends Controller
 {
     public function index()
@@ -53,6 +54,60 @@ class CategoryController extends Controller
         return redirect()
             ->action('CategoryController@index')
             ->with('msg', 'New book with id: '.$newCate_id.' has been inserted');
+    }
+
+    public function edit($Cate_id)
+    {
+        $category = CateRepos::getCateById($Cate_id); //this is always an array
+
+
+        return view(
+            'AdminSite.category.update',
+            ["category" => $category[0]]);
+    }
+
+    public function update(Request $request, $Cate_id)
+    {
+        if ($Cate_id != $request->input('Cate_id')) {
+            //id in query string must match id in hidden input
+            return redirect()->action('CategoryController@index');
+        }
+
+        $this->formValidateCate($request)->validate(); //shortcut
+
+        $category = (object)[
+            'Cate_id' => $request->input('Cate_id'),
+            'Cate_Name' => $request->input('Cate_Name'),
+            'Cate_Description' => $request->input('Cate_Description')
+        ];
+        CateRepos::update($category);
+
+        return redirect()->action('CategoryController@index')
+            ->with('msg', 'Update Successfully');
+    }
+
+    public function confirm($Cate_id){
+        $category = CateRepos::getCateById($Cate_id); //this is always an array
+
+        return view('AdminSite.category.confirm',
+            [
+                'category' => $category[0]
+            ]
+        );
+    }
+
+    public function destroy(Request $request, $Cate_id)
+    {
+        if ($request->input('Cate_id') != $Cate_id) {
+            //id in query string must match id in hidden input
+            return redirect()->action('CategoryController@index');
+        }
+
+        CateRepos::delete($Cate_id);
+
+
+        return redirect()->action('CategoryController@index')
+            ->with('msg', 'Delete Successfully');
     }
 
     private function formValidateCate(Request $request)

@@ -50,29 +50,29 @@ class GiftsRepos
         }
     }
 
-//    public static function update($product)
-//    {
-//        $sql = 'update gifts ';
-//        $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
-//        $sql .= 'where Gifts_id = ? ';
-//
-//        DB::update($sql, [$product->Gifts_Name, $product->Cate_id, $product->Price, $product->Brand,
-//            $product->Gifts_Description, $product->Gifts_Images, $product->Gifts_id]);
-//    }
+    public static function update($product)
+    {
+        $sql = 'update gifts ';
+        $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
+        $sql .= 'where Gifts_id = ? ';
+
+        DB::update($sql, [$product->Gifts_Name, $product->Cate_id, $product->Price, $product->Brand,
+            $product->Gifts_Description, $product->Gifts_Images, $product->Gifts_id]);
+    }
 
 
-//    public static function delete($Elec_id){
-//        $sql = 'delete from gifts ';
-//        $sql .= 'where Gifts_id = ? ';
-//
-//        return DB::delete($sql, [$Elec_id]);
-//    }
+    public static function delete($Elec_id){
+        $sql = 'delete from gifts ';
+        $sql .= 'where Gifts_id = ? ';
+
+        return DB::delete($sql, [$Elec_id]);
+    }
 
 
-//    public static function selectCate($Cate_id){
-//        $sql = 'select p.* ';
-//        $sql .= 'from gifts as p ';
-//        $sql .= 'where p.Gifts_id = ? ';
-//        return DB::select($sql, [$Cate_id]);
-//    }
+    public static function selectCate($Cate_id){
+        $sql = 'select p.* ';
+        $sql .= 'from gifts as p ';
+        $sql .= 'where p.Gifts_id = ? ';
+        return DB::select($sql, [$Cate_id]);
+    }
 }
