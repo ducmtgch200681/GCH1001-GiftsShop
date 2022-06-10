@@ -137,3 +137,17 @@ Route::group(['prefix' => 'Gifts'], function () {
         'as' => 'product.destroy'
     ]);
 });
+
+//Register
+Route::group(['prefix' => 'register'], function (){
+    Route::get('',[
+        'uses' => 'CustomerControllerWithRepos@registerCus',
+        'as' => 'customer.registerCus'
+    ]);
+
+    Route::post('',[
+        'uses' => 'CustomerControllerWithRepos@store',
+        'as' => 'customer.store'
+    ]);
+});
+

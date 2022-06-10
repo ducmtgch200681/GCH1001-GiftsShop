@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $newCate_id = CateRepos::insert($category);
         return redirect()
             ->action('CategoryController@index')
-            ->with('msg', 'New book with id: '.$newCate_id.' has been inserted');
+            ->with('msg', 'New category with id: '.$newCate_id.' has been inserted');
     }
 
     public function edit($Cate_id)
