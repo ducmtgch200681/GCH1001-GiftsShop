@@ -17,6 +17,11 @@ class CustomerController extends Controller
             ]);
     }
 
+    public function loginCus()
+    {
+        return view('GiftsShop.Log&Reg.login');
+    }
+
     public function show($Cus_id)
     {
         $customer = CusRepos::getCusById($Cus_id);

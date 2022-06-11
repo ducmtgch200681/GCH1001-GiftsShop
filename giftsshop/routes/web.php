@@ -141,12 +141,17 @@ Route::group(['prefix' => 'Gifts'], function () {
 //Register
 Route::group(['prefix' => 'register'], function (){
     Route::get('',[
-        'uses' => 'CustomerControllerWithRepos@registerCus',
+        'uses' => 'CustomerController@registerCus',
         'as' => 'customer.registerCus'
     ]);
 
+    Route::get('/login',[
+        'uses' => 'CustomerController@loginCus',
+        'as' => 'customer.loginCus'
+    ]);
+
     Route::post('',[
-        'uses' => 'CustomerControllerWithRepos@store',
+        'uses' => 'CustomerController@store',
         'as' => 'customer.store'
     ]);
 });
