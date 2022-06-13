@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::group(['prefix' => 'Admin'], function () {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('', [
         'uses' => 'AdminController@index',
         'as' => 'admin.index'
@@ -53,7 +53,7 @@ Route::group(['prefix' => 'Admin'], function () {
 //Customer
 
 //Category
-Route::group(['prefix' => 'Category'], function () {
+Route::group(['prefix' => 'category'], function () {
     Route::get('', [
         'uses' => 'CategoryController@index',
         'as' => 'category.index'
@@ -96,7 +96,7 @@ Route::group(['prefix' => 'Category'], function () {
 });
 
 //Product
-Route::group(['prefix' => 'Gifts'], function () {
+Route::group(['prefix' => 'gifts'], function () {
     Route::get('', [
         'uses' => 'GiftsController@index',
         'as' => 'product.index'
