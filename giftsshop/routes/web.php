@@ -158,3 +158,21 @@ Route::group(['prefix' => 'register'], function (){
 //    ]);
 });
 
+Route::group(['prefix' => 'customer'], function(){
+   Route::get('', [
+       'uses' => 'Customer2Controller@index',
+       'as' => 'customer.index'
+   ]);
+   Route::get('show/{Cus_id}' , [
+      'uses' => 'Customer2Controller@show',
+      'as' => 'customer.show'
+   ]);
+   Route::get('update/{Cus_id}', [
+       'uses' => 'Customer2Controller@edit',
+       'as' => 'customer.edit'
+   ]);
+   Route::post('update/{Cus_id}', [
+       'uses' => 'Customer2Controller@update',
+       'as' => 'customer.update'
+   ]);
+});
