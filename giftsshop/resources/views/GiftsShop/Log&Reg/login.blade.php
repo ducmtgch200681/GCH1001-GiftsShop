@@ -15,17 +15,17 @@
 <body>
 
 <div class="main">
-    <!-- Sing in  Form -->
+
     <section class="sign-in">
         <div class="container">
             <div class="signin-content">
                 <div class="signin-image">
                     <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
-                    <a href="#" class="signup-image-link">Create an account</a>
+                    <a href="{{route('customer.registerCus')}}" class="signup-image-link">Create an account</a>
                 </div>
 
                 <div class="signin-form">
-                    <h2 class="form-title">Sign up</h2>
+                    <h2 class="form-title">Sign in</h2>
                     <form method="POST" class="register-form" id="login-form">
                         <div class="form-group">
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -55,7 +55,6 @@
             </div>
         </div>
     </section>
-
 </div>
 
 <!-- JS -->

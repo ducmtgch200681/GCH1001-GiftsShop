@@ -17,11 +17,6 @@ class CustomerController extends Controller
             ]);
     }
 
-    public function loginCus()
-    {
-        return view('GiftsShop.Log&Reg.login');
-    }
-
     public function show($Cus_id)
     {
         $customer = CusRepos::getCusById($Cus_id);
@@ -31,10 +26,20 @@ class CustomerController extends Controller
             ]
         );
     }
+
+    public function loginCus()
+    {
+        return view('GiftsShop.Log&Reg.login',
+        ['customer' => (object)[
+            'Cus_Username' => '',
+            'Cus_Password' => ''
+        ]]);
+    }
+
     public function registerCus()
     {
         return view(
-            'GiftsShop.add',
+            'GiftsShop.Log&Reg.reg',
             ['customer' => (object)[
                 'Cus_id' => '',
                 'Cus_Fullname' => '',
@@ -67,7 +72,7 @@ class CustomerController extends Controller
 
     public function edit($Cus_id)
     {
-        $customer = CusRepos::getCusById($Cus_id); //this is always an array
+        $customer = CusRepos::getCusById($Cus_id);
 
         return view(
             'AdminSite.customer.update',
@@ -77,7 +82,7 @@ class CustomerController extends Controller
     public function update(Request $request, $Cus_id)
     {
         if ($Cus_id != $request->input('Cus_id')) {
-            return redirect()->action('CustomerControllerWithRepos@index');
+            return redirect()->action('CustomerController@index');
         }
 
         $this->formValidateCus($request)->validate();
@@ -92,7 +97,7 @@ class CustomerController extends Controller
             'Address' => $request->input('Address'),
         ];
         CusRepos::update($customer);
-        return redirect()->action('CustomerControllerWithRepos@index');
+        return redirect()->action('CustomerController@index');
 
     }
 
