@@ -5,6 +5,7 @@
         <div class="p-2 pt-md-5 pb-md-3 mx-auto ">
             <br>
             <h1 class="display-4">Administrator Account</h1>
+
         </div>
         <table class="table table-hover ">
             <thead class="thead-dark">
@@ -34,7 +35,8 @@
 {{--                    <td>--}}
 {{--                        <a type="button" class="btn btn-danger btn-sm"--}}
 {{--                           href="{{route('admin.confirm', ['Ad_id' => $a->Ad_id])}}"--}}
-{{--                        >Delete</a></td>--}}
+{{--                        >Delete</a>--}}
+{{--                    </td>--}}
                 </tr>
             @endforeach
             </tbody>
