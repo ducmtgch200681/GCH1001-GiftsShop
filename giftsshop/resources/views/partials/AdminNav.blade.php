@@ -8,53 +8,42 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="bookDropdown" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Administrator</a>
-                    <div class="dropdown-menu" aria-labelledby="bookDropdown">
-                        <a class="dropdown-item"
-                           href="{{route('admin.index')}}"
-                        >View all admin accounts</a>
+                    <div class="dropdown-menu" aria-labelledby="adminDropdown">
+                        <a class="dropdown-item" href="{{route('admin.index')}}">View all admin accounts</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="publisherDropdown" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="customerDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Customer
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="publisherDropdown">
-                        <a class="dropdown-item"
-{{--                           href="{{route('customer.index')}}"--}}
-                           A>View all customer accounts</a>
+                    <div class="dropdown-menu" aria-labelledby="customerDropdown">
+                        <a class="dropdown-item" href="{{route('customer.index')}}">View all customer accounts</a>
+{{--                        <a class="dropdown-item" href="{{route('customer.create')}}">New customer account</a>--}}
                     </div>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="formatDropdown" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Gifts
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="formatDropdown">
-                        <a class="dropdown-item"
-                           href="{{route('product.index')}}"
-                        >View All Gifts</a>
-                        <a class="dropdown-item"
-                           href="{{route('product.create')}}"
-                        >New Gifts</a>
+                    <div class="dropdown-menu" aria-labelledby="productDropdown">
+                        <a class="dropdown-item" href="{{route('product.index')}}">View All Gifts</a>
+                        <a class="dropdown-item" href="{{route('product.create')}}">New Gifts</a>
                     </div>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="formatDropdown" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Category
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="formatDropdown">
-                        <a class="dropdown-item"
-                           href="{{route('category.index')}}"
-                        >View All Category</a>
-                        <a class="dropdown-item"
-                           href="{{route('category.create')}}"
-                        >New Category</a>
+                    <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                        <a class="dropdown-item" href="{{route('category.index')}}">View All Category</a>
+                        <a class="dropdown-item" href="{{route('category.create')}}">New Category</a>
                     </div>
                 </li>
             </ul>

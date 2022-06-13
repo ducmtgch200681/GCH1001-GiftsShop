@@ -1,11 +1,11 @@
-@extends('masters.giftshopMaster')
+@extends('masters.adMaster')
 
 @section('main')
   <div class="container">
     <div class="p-2 pt-md-5 pb-md-3 mx-auto ">
       <br>
       <h1 class="display-4">Customers Account</h1>
-      @include('giftshop.customer.sessionmessage')
+      @include('partials.message')
     </div>
     <table class="table table-hover ">
       <thead class="thead-dark">
