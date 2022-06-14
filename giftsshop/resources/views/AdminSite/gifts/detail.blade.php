@@ -18,5 +18,5 @@
     <dd class="col-sm-9">{{ $product->Gifts_Description }}</dd>
 
     <dt class="col-sm-3">Image</dt>
-    <dd class="col-sm-9"><img width = 500rem; src="{{asset('storage/'.$product->Gifts_Images )}}" /></dd>
+    <dd class="col-sm-9"><img width = 200rem; src="{{asset('storage/Images/'.$product->Gifts_Images )}}" /></dd>
 </dl>

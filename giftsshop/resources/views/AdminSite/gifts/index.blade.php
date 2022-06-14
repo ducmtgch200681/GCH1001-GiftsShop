@@ -32,13 +32,13 @@
                     </td>
                     <td>
                         <a type="button" class="btn btn-success btn-sm"
-{{--                           href="{{route('product.edit', ['Gifts_id' => $p->Gifts_id])}}"--}}
+                           href="{{route('product.edit', ['Gifts_id' => $p->Gifts_id])}}"
                         >Edit
                         </a>
                     </td>
                     <td>
                         <a type="button" class="btn btn-danger btn-sm"
-{{--                           href="{{route('product.confirm', ['Gifts_id' => $p->Gifts_id])}}"--}}
+                           href="{{route('product.confirm', ['Gifts_id' => $p->Gifts_id])}}"
                         >Delete
                         </a>
                     </td>

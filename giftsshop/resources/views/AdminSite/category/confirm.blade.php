@@ -1,4 +1,4 @@
-    @extends('masters.adMaster')
+@extends('masters.adMaster')
 
 @section('main')
     <div class="container">

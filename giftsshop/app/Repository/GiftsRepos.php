@@ -6,14 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class GiftsRepos
 {
-//    public static function getAllProductWithCateName(){
-//        $sql =' select p.*, c.Cate_Name as CategoryName ';
-//        $sql .='from gifts as p ';
-//        $sql .='join category as c on p.Cate_Id = c.Cate_id ';
-//        $sql .='order by p.Gifts_Name ';
-//
-//        return DB::select($sql);
-//    }
 
     public static function getAllGifts()
     {
@@ -52,6 +44,8 @@ class GiftsRepos
 
     public static function update($product)
     {
+        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+
         $sql = 'update gifts ';
         $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
         $sql .= 'where Gifts_id = ? ';

@@ -177,4 +177,12 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
+//admin page
+Route::group(['prefix' => 'adminpage'], function () {
+    Route::get('',[
+       'user' => 'AdminPageController@index',
+       'as' => 'adminpage.index'
+    ]);
+
+});
 

@@ -5,9 +5,7 @@
         <h1 class="display-4">Are you sure you want to delete?</h1>
         @include('AdminSite.category.detail')
 
-        {{--    <form action="{{route('category.destroy', ['Cate_id' =>$Gift->Gifts_id])}}" method="post">--}}
-        {{--      @csrf--}}
-        {{--      <input type="hidden" name="Cate_id" value="{{$Gift->Gifts_id}}">--}}
+
         <form action="{{route('category.destroy', ['Cate_id' =>$category->Cate_id])}}" method="post">
             @csrf
             <input type="hidden" name="Cate_id" value="{{$category->Cate_id}}">
