@@ -80,10 +80,11 @@ class CustomerController
                 'Cus_id' => '',
                 'Cus_Fullname' => '',
                 'Cus_Username' => '',
-                'Cus_Email' => '',
+                'Cus_password' => '',
+                'Cus_gender' => '',
+                'Cus_phone' => '',
                 'Cus_DoB' => '',
-                'Phone' => '',
-                'Address' => ''
+                'Cus_add' => ''
             ]]);
     }
 
