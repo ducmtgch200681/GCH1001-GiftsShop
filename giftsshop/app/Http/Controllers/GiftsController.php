@@ -129,6 +129,27 @@ class GiftsController extends Controller
         return redirect()->action('GiftsController@index');
     }
 
+    //    public function confirm($Cus_id){
+//        $customer = CusRepos::getCusById($Cus_id);
+//
+//        return view('AdminSite.customer.confirm',
+//            [
+//                'customer' => $customer[0]
+//            ]
+//        );
+//    }
+//
+//    public function destroy(Request $request, $Cus_id)
+//    {
+//        if ($request->input('Cus_id') != $Cus_id) {
+//            return redirect()->action('CustomerController@index');
+//        }
+//
+//        CusRepos::delete($Cus_id);
+//
+//        return redirect()->action('CustomerController@index');
+//    }
+
     private function formValidatePro(Request $request)
     {
         return Validator::make(
