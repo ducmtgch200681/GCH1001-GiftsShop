@@ -1,4 +1,4 @@
-@extends('masters.giftshopMaster')
+@extends('masters.adMaster')
 
 @section('main')
   <div class="container">

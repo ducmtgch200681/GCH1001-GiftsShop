@@ -171,10 +171,10 @@ Route::group(['prefix' => 'register'], function (){
         'as' => 'customer.registerCus'
     ]);
 
-//    Route::post('',[
-//        'uses' => 'CustomerController@store',
-//        'as' => 'customer.store'
-//    ]);
+    Route::post('',[
+        'uses' => 'GiftsController@store',
+        'as' => 'customer.store'
+    ]);
 });
 
 

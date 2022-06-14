@@ -22,23 +22,37 @@
             <div class="signup-content">
                 <div class="signup-form">
                     <h2 class="form-title">Sign up</h2>
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" class="register-form" id="register-form" action="{{route('customer.store')}}">
                         <div class="form-group">
-                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="name" id="name" placeholder="Your Name"/>
+                            <label for="Cus_Fullnamename"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="Cus_Fullname" id="Cus_Fullname" placeholder="Your Name" value="{{old('Cus_Fullname')?? $customer->Cus_Fullname}}">
                         </div>
                         <div class="form-group">
-                            <label for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            <label for="Cus_Username"><i class="zmdi zmdi-email"></i></label>
+                            <input type="text" name="Cus_Username" id="Cus_Username" placeholder="Your Username" value="{{old('Cus_Username')?? $customer->Cus_Username}}">
                         </div>
                         <div class="form-group">
-                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="pass" id="pass" placeholder="Password"/>
+                            <label for="Cus_password"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="Cus_password" id="Cus_password" placeholder="Password" value="{{old('Cus_password')?? $customer->Cus_password}}">
                         </div>
                         <div class="form-group">
-                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                            <label for="Cus_gender"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="text" name="Cus_gender" id="Cus_gender" placeholder="Your Gender" value="{{old('Cus_gender')?? $customer->Cus_gender}}">
                         </div>
+                        <div class="form-group">
+                            <label for="Cus_phone"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="tel" name="Cus_phone" id="Cus_phone" placeholder="Your Telephone" value="{{old('Cus_phone')?? $customer->Cus_phone}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="Cus_DoB"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="date" name="Cus_DoB" id="Cus_DoB" placeholder="Your Date of Birth" value="{{old('Cus_DoB')?? $customer->Cus_DoB}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="Cus_add"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="text" name="Cus_add" id="Cus_add" placeholder="Your Address" value="{{old('Cus_add')?? $customer->Cus_add}}">
+                        </div>
+
+
                         <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                             <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
