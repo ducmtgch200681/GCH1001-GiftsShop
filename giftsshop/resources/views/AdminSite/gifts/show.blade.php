@@ -1,4 +1,4 @@
-@extends('masters.adMaster')
+@extends('w301- web.GCH1001.web_project.resources.views.AdminSite.masters.adMaster')
 
 @section('main')
 
