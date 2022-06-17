@@ -177,4 +177,11 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
+//Mainpage
+Route::group(['prefix' =>  'giftsshop'], function (){
+    Route::get('',[
+        'uses' => 'MainpageController@index',
+        'as' => 'GiftsShop.Mainpage.homepage'
+    ]);
 
+});
