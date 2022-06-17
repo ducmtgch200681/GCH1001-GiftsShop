@@ -14,4 +14,13 @@ class MainpageRepos
 
         return DB::select ($sql);
     }
+
+    public static function getGiftsById($Gifts_id)
+    {
+        $sql = 'select p.* ';
+        $sql .= 'from gifts as p ';
+        $sql .= 'where p.Gifts_id = ? ';
+
+        return DB::select ($sql, [$Gifts_id]);
+    }
 }
