@@ -172,16 +172,17 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 
     Route::post('',[
-        'uses' => 'CustomerController@store',
+        'uses' => 'GiftsController@store',
         'as' => 'customer.store'
     ]);
 });
+
 
 //Mainpage
 Route::group(['prefix' =>  'giftsshop'], function (){
     Route::get('',[
         'uses' => 'MainpageController@index',
-        'as' => 'GiftsShop.Mainpage.homepage'
+        'as' => 'mainpage.index'
     ]);
 
 });
