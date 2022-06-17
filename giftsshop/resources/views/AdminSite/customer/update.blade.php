@@ -7,7 +7,7 @@
       @include('partials.errors')
       <form action="{{route('customer.update', ['Cus_id' => $customer->Cus_id])}}" method="post">
         @csrf
-        @include('giftshop.customer.customerFields')
+        @include('AdminSite.customer.customerFields')
         <button type="submit" class="btn btn-dark">Submit</button>
         <a type="button" class="btn btn-danger" href="{{route('customer.index')}}">Back</a>
       </form>

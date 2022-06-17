@@ -172,7 +172,7 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 
     Route::post('',[
-        'uses' => 'GiftsController@store',
+        'uses' => 'CustomerController@store',
         'as' => 'customer.store'
     ]);
 });

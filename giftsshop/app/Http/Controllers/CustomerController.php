@@ -91,7 +91,7 @@ class CustomerController
     public function store(Request $request)
     {
         $this->formValidateCus($request)->validate();
-
+//        dd($request->all());
         $customer = (object)[
             'Cus_id' => $request->input('Cus_id'),
             'Cus_Fullname' => $request->input('Cus_Fullname'),
@@ -105,7 +105,7 @@ class CustomerController
 
         $newCus_id = CusRepos::insert($customer);
         return redirect()
-            ->action('CusomerController@index')
+            ->action('CustomerController@index')
             ->with('msg', 'New customer with id: '.$newCus_id.' has been inserted');
     }
 }
