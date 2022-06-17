@@ -163,7 +163,7 @@ Route::group(['prefix' => 'login'], function (){
         'uses' => 'CustomerController@loginCus',
         'as' => 'customer.loginCus'
     ]);
-});
+}); 
 //Register
 Route::group(['prefix' => 'register'], function (){
     Route::get('',[
@@ -177,12 +177,6 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
-Route::group(['prefix' => 'clientsite'], function(){
-    Route::get('', [
-        'uses' => 'HomeController@index',
-        'as' => 'home.index'
-    ]);
-});
 
 
 //Mainpage
@@ -191,5 +185,8 @@ Route::group(['prefix' =>  'giftsshop'], function (){
         'uses' => 'MainpageController@index',
         'as' => 'mainpage.index'
     ]);
-
+    Route::get('show/{Gifts_id}', [
+        'uses' => 'MainpageController@show',
+        'as' => 'mainpage.show'
+    ]);
 });
