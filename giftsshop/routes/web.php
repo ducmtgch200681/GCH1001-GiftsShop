@@ -172,8 +172,15 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 
     Route::post('',[
-        'uses' => 'CustomerController@store',
+        'uses' => 'GiftsController@store',
         'as' => 'customer.store'
+    ]);
+});
+
+Route::group(['prefix' => 'clientsite'], function(){
+    Route::get('', [
+        'uses' => 'HomeController@index',
+        'as' => 'home.index'
     ]);
 });
 
