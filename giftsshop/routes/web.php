@@ -177,4 +177,11 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
+Route::group(['prefix' => 'clientsite'], function(){
+    Route::get('', [
+        'uses' => 'HomeController@index',
+        'as' => 'home.index'
+    ]);
+});
+
 
