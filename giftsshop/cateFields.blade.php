@@ -13,6 +13,6 @@
 <div class="form-group">
     <label for="Cate_image" class="font-weight-bold">Image</label>
     <input type="file" name="Cate_image" id="Cate_image" value="{{old('Cate_image')?? $category->Cate_image}}">
-    <img width = 500rem; src="{{asset('image/'.$category->Cate_image )}}" />
+    <img width = 500rem; src="{{asset('images/'.$category->Cate_image )}}" />
 </div>
 

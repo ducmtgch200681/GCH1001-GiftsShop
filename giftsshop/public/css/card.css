@@ -28,13 +28,21 @@ body {
     background-color: #f7f7f7;
 }
 
-.page-wrapper {
-    height: 100%;
-    display: table;
+.grid-container{
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
+/*.page-wrapper {*/
+/*    height: 100%;*/
+/*    display: block;*/
+/*}*/
+
 .page-wrapper .page-inner {
-    display: table-cell;
+
+    padding: 0 2rem 0 2rem;
+
     vertical-align: middle;
 }
 
