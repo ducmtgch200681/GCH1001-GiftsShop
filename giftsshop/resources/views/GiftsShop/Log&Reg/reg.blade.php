@@ -23,6 +23,8 @@
                 <div class="signup-form">
                     <h2 class="form-title">Sign up</h2>
                     <form method="POST" class="register-form" id="register-form" action="{{route('customer.store')}}">
+                        @csrf
+                        <input type="hidden" name="Cus_id" value="{{$customer->Cus_id}}">
                         <div class="form-group">
                             <label for="Cus_Fullnamename"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="text" name="Cus_Fullname" id="Cus_Fullname" placeholder="Your Name" value="{{old('Cus_Fullname')?? $customer->Cus_Fullname}}">
@@ -53,13 +55,14 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                        </div>
-                        <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />--}}
+{{--                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group form-button" >--}}
+{{--                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>--}}
+{{--                        </div>--}}
+                        <button type="submit" class="btn btn-dark">Submit</button>
                     </form>
                 </div>
                 <div class="signup-image">

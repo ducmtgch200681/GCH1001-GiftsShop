@@ -185,3 +185,11 @@ Route::group(['prefix' => 'clientsite'], function(){
 });
 
 
+//Mainpage
+Route::group(['prefix' =>  'giftsshop'], function (){
+    Route::get('',[
+        'uses' => 'MainpageController@index',
+        'as' => 'mainpage.index'
+    ]);
+
+});
