@@ -8,9 +8,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('mainpage.index')}}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="#">Link</a>--}}
+{{--            </li>--}}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                     Category
@@ -23,9 +23,9 @@
 
                 </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled">Link</a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link disabled">Link</a>--}}
+{{--            </li>--}}
         </ul>
         <form class="d-flex">
             <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
