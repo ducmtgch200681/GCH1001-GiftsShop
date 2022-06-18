@@ -23,7 +23,7 @@
                     <td>{{$c->Cate_Description}}</td>
                     <td>
                         <a href="{{route('category.show', ['Cate_id' =>$c->Cate_id])}}">
-                            <img src="{{asset('image/'. $c->Cate_image)}}" alt="" style="width: 30%">
+                            <img src="{{asset('images/'. $c->Cate_image)}}" alt="" style="width: 30%">
                         </a>
                     </td>
                     <td>
