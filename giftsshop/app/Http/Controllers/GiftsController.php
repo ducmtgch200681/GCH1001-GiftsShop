@@ -127,13 +127,22 @@ class GiftsController extends Controller
     public function destroy(Request $request, $Gift_id)
     {
 
-
+        if ($request->input('Gifts_id') != $Gift_id) {
+            //id in query string must match id in hidden input
+            return redirect()->action('GiftsController@index');
+        }
         GiftsRepos::delete($Gift_id);
 
-        return redirect()->action('GiftsController@index');
-    }
 
-    //    public function confirm($Cus_id){
+        return redirect()->action('GiftsController@index')
+            ->with('msg', 'Delete Successfully');
+    }
+//        GiftsRepos::delete($Gift_id);
+//
+//        return redirect()->action('GiftsController@index');
+//    }
+//
+//        public function confirm($Cus_id){
 //        $customer = CusRepos::getCusById($Cus_id);
 //
 //        return view('AdminSite.customer.confirm',
@@ -152,7 +161,7 @@ class GiftsController extends Controller
 //        CusRepos::delete($Cus_id);
 //
 //        return redirect()->action('CustomerController@index');
-//    }
+
 
     private function formValidatePro(Request $request)
     {

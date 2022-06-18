@@ -109,9 +109,11 @@ class CategoryController extends Controller
         }
 
 
-        if (CateRepos::delete($Cate_id) === false)
-            return redirect()->action('CategoryController@index')
-                ->with('err', 'Please delete all the gifts before deleteing this category');
+        CateRepos::delete($Cate_id);
+
+//        if (CateRepos::delete($Cate_id) === false)
+//            return redirect()->action('CategoryController@index')
+//                ->with('err', 'Please delete all the gifts before deleteing this category');
 
         return redirect()->action('CategoryController@index')
             ->with('msg', 'Delete Successfully');
