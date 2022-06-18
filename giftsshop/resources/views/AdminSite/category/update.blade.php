@@ -7,7 +7,7 @@
 
         @include('partials.errors')
 
-        <form action="{{route('category.update', ['Cate_id' => $category->Cate_id])}}" method="post">
+        <form action="{{route('category.update', ['Cate_id' => old('Cate_id')??  $category->Cate_id])}}" method="post" enctype="multipart/form-data">
             @csrf
             @include('AdminSite.category.cateFields')
 
