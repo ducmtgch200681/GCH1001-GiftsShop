@@ -94,20 +94,23 @@ class GiftsController extends Controller
         $this->formValidatePro($request)->validate();
 
         $path = $request->file('Gifts_Images')->store('public/Images');
+        $array = explode('/', $path);
+        $path = end($array);
 
         $product = (object)[
-            'Gifts_id' => $request->input('Gift_id'),
-            'Gifts_Name' => $request->input('Gift_Name'),
+            'Gifts_id' => $request->input('Gifts_id'),
+            'Gifts_Name' => $request->input('Gifts_Name'),
             'Cate_id' => $request->input('Cate_id'),
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
             'Gifts_Images' => substr($path, 0)
         ];
+
         GiftsRepos::update($product);
 
-        return redirect()->action('GiftsController@index');
-
+        return redirect()->action('GiftsController@index')
+        ->with('msg', 'Update Successfully');
     }
 
     public function confirm($Gift_id){
@@ -123,32 +126,10 @@ class GiftsController extends Controller
     public function destroy(Request $request, $Gift_id)
     {
 
-
         GiftsRepos::delete($Gift_id);
 
         return redirect()->action('GiftsController@index');
     }
-
-    //    public function confirm($Cus_id){
-//        $customer = CusRepos::getCusById($Cus_id);
-//
-//        return view('AdminSite.customer.confirm',
-//            [
-//                'customer' => $customer[0]
-//            ]
-//        );
-//    }
-//
-//    public function destroy(Request $request, $Cus_id)
-//    {
-//        if ($request->input('Cus_id') != $Cus_id) {
-//            return redirect()->action('CustomerController@index');
-//        }
-//
-//        CusRepos::delete($Cus_id);
-//
-//        return redirect()->action('CustomerController@index');
-//    }
 
     private function formValidatePro(Request $request)
     {
