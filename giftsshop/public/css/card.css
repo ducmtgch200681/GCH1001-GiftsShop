@@ -34,15 +34,14 @@ body {
     flex-wrap: wrap;
 }
 
-/*.page-wrapper {*/
-/*    height: 100%;*/
-/*    display: block;*/
-/*}*/
+.page-wrapper {
+    height: 100%;
+    display: block;
+}
 
 .page-wrapper .page-inner {
 
     padding: 0 2rem 0 2rem;
-
     vertical-align: middle;
 }
 

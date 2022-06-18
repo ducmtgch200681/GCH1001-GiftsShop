@@ -51,9 +51,9 @@
     </div>
     <div class="grid-container">
         @foreach($product as $s)
-            <div class="container page-wrapper">
+            <div class="page-wrapper">
                 <div class="page-inner">
-                    <div class="row">
+
                         <div class="el-wrapper">
                             <div class="box-up">
                                 <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
@@ -82,7 +82,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+
                 </div>
             </div>
         @endforeach
