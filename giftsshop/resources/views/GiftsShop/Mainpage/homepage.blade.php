@@ -11,14 +11,14 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{asset('image/image1.jpg')}}" class="d-block w-100" alt="First slide">
+                            <img src="{{asset('images/image1.jpg')}}" class="d-block w-100" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
                                 <p>Some representative placeholder content for the first slide.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="{{asset('image/image2.jpg')}}" class="d-block w-100" alt="Second slide">
+                            <img src="{{asset('images/image2.jpg')}}" class="d-block w-100" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="carousel-item">
 
-                            <img src="{{asset('image/image3.jpg')}}" class="d-block w-100" alt="Third slide">
+                            <img src="{{asset('images/image3.jpg')}}" class="d-block w-100" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
@@ -51,9 +51,9 @@
     </div>
     <div class="grid-container">
         @foreach($product as $s)
-            <div class="container page-wrapper">
+            <div class="page-wrapper">
                 <div class="page-inner">
-                    <div class="row">
+
                         <div class="el-wrapper">
                             <div class="box-up">
                                 <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
@@ -82,7 +82,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+
                 </div>
             </div>
         @endforeach
