@@ -1,0 +1,7 @@
+Weight: 200g
+Packing type: Double pack
+Food Type: Seasonal, Traditional
+Ingredients: POWDER, SUGAR, BEACH
+Expiration Date: 30-06-2222
+Type of cake: MOON CAKE
+Package Size: 200MG
