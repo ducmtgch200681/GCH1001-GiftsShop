@@ -15,14 +15,14 @@ class CateRepos
         return DB::select ($sql);
     }
 
-    public static function getAllCateName()
-    {
-        $sql = 'select ca.* ';
-        $sql .= 'from category as ca ';
-        $sql .= 'order by ca.Cate_Name ';
-
-        return DB::select ($sql);
-    }
+//    public static function getAllCateName()
+//    {
+//        $sql = 'select ca.* ';
+//        $sql .= 'from category as ca ';
+//        $sql .= 'order by ca.Cate_Name ';
+//
+//        return DB::select ($sql);
+//    }
 
     public static function getCateById($Cate_id)
     {
