@@ -1,0 +1,4 @@
+Name: Wine
+Price: 98$
+Brand: Charles Heidsieck
+Description: Wines with high acidity taste tart and zesty. Red wines have more tart fruit characteristics (versus “sweet fruit”). White wines are often described with characteristics similar to lemon or lime juice.

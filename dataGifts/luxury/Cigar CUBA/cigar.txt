@@ -1,0 +1,4 @@
+Name: Cigar CUBA
+Price: 498$
+Brand: CUBA
+Description: A cigar is a rolled bundle of dried and fermented tobacco leaves made to be smoked. Cigars are produced in a variety of sizes and shapes. Since the 20th century, almost all cigars are made of three distinct components: the filler, the binder leaf which holds the filler together, and a wrapper leaf, which is often the highest quality leaf used.

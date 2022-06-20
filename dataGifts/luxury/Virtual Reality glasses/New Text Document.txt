@@ -1,0 +1,4 @@
+Name: Virtual reality glasses
+Prince: 199$
+Brand: SAMSUNG
+Description: (Virtual Reality headset) A head-worn apparatus that completely covers the eyes for an immersive 3D experience. Also called "VR goggles," VR headsets may be entirely self-contained such as the Oculus Rift or the HTC Vive.
