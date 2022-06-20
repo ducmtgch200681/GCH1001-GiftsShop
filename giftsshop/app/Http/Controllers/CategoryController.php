@@ -39,15 +39,9 @@ class CategoryController extends Controller
             ]]);
 
     }
-    public function store(Request $request)
+    public function store (Request $request)
     {
         $this->formValidate($request)->validate();
-
-//        $path = $request->file('Cate_image')->store('public/Images');
-//        $file = $request->file('Cate_image');
-
-//        $fileName = $file->getClientOriginalName();
-//        $this->moveFileToFolder($file, $fileName);
 
         $category = (object)[
             'Cate_Name' => $request->input('Cate_Name'),

@@ -53,7 +53,7 @@ class GiftsController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store (Request $request)
     {
 //        dd($request->all());
         $this->formValidatePro($request)->validate();
@@ -92,11 +92,6 @@ class GiftsController extends Controller
 
         $this->formValidatePro($request)->validate();
 
-//        $path = $request->file('Gifts_Images')->store('public/Images');
-//        $array = explode('/', $path);
-//        $path = end($array);
-//        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-//        $out->writeln($request->input('Gift_id'));
         $file = $request->file('Gifts_Images');
         $fileName = $file->getClientOriginalName();
         $this->moveFileToFolder($file, $fileName);
