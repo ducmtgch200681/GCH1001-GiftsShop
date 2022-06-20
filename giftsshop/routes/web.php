@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('', [
         'uses' => 'AdminController@index',
         'as' => 'admin.index'
@@ -69,7 +69,7 @@ Route::group(['prefix' => 'auth'], function (){
 });
 
 //Customer
-Route::group(['prefix' => 'customer', 'middleware' => ['manual.auth']], function(){
+Route::group(['prefix' => 'customer', ], function(){
     Route::get('', [
         'uses' => 'CustomerController@index',
         'as' => 'customer.index'
@@ -89,7 +89,7 @@ Route::group(['prefix' => 'customer', 'middleware' => ['manual.auth']], function
 });
 
 //Category
-Route::group(['prefix' => 'category', 'middleware' => ['manual.auth']], function () {
+Route::group(['prefix' => 'category',], function () {
     Route::get('', [
         'uses' => 'CategoryController@index',
         'as' => 'category.index'
@@ -132,7 +132,7 @@ Route::group(['prefix' => 'category', 'middleware' => ['manual.auth']], function
 });
 
 //Product
-Route::group(['prefix' => 'gifts', 'middleware' => ['manual.auth']], function () {
+Route::group(['prefix' => 'gifts', ], function () {
     Route::get('', [
         'uses' => 'GiftsController@index',
         'as' => 'product.index'
@@ -194,14 +194,3 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
-//Mainpage
-Route::group(['prefix' =>  'giftsshop'], function (){
-    Route::get('',[
-        'uses' => 'MainpageController@index',
-        'as' => 'mainpage.index'
-    ]);
-    Route::get('show/{Gifts_id}', [
-        'uses' => 'MainpageController@show',
-        'as' => 'mainpage.show'
-    ]);
-});
