@@ -8,7 +8,7 @@
         </div>
         @include('partials.errors')
 
-        <form action="{{route('product.store')}}" method="post" enctype= "multipart/form-data">
+        <form action="{{route('product.store')}}" method="post">
             @csrf
             @include('AdminSite.gifts.proFields')
             <button type="submit" class="btn btn-dark">Submit</button>
