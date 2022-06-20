@@ -24,7 +24,7 @@
             @foreach($product as $p)
                 <tr>
                     <td>{{$p->Gifts_Name}}</td>
-                    <td>{{$p->Cate_id}}</td>
+                    <td>{{$p->CategoryName}}</td>
 {{--                    <td>{{$p->Price}}</td>--}}
 {{--                    <td>{{$p->Brand}}</td>--}}
                     <td>

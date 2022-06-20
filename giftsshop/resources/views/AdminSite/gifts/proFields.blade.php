@@ -37,10 +37,10 @@
 </div>
 
 <div class="form-group">
-    <label for="img" class="font-weight-bold">Image</label><br>
-    <img class="img-fluid" alt="" width="230" height="120" src="{{asset('storage/'.$product->Gifts_Images )}}" alt="">
+    <label for="Gifts_Images" class="font-weight-bold">Image</label><br>
+    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/Images/'.$product->Gifts_Images )}}">
     <br>
-    <input type="file" id="img" name="Gifts_Images"  value="{{old('img')?? $product->Gifts_Images}}">
+    <input type="file" id="file" name="Gifts_Images"  value="{{old('Gifts_Images')?? $product->Gifts_Images}}">
 </div>
 
 

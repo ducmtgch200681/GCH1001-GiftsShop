@@ -11,7 +11,7 @@ class GiftsController extends Controller
 {
     public function index()
     {
-        $product = GiftsRepos::getAllGifts();
+        $product = GiftsRepos::getAllProductWithCateName();
         return view('AdminSite.gifts.index',
             [
                 'product' => $product
