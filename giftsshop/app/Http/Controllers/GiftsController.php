@@ -45,7 +45,7 @@ class GiftsController extends Controller
                 'Price' => '',
                 'Brand' => '',
                 'Gifts_Description' => '',
-                'Gifts_Images' => '',
+                'Gifts_Images' => ''
             ],
                 "category" =>$category
             ]);
@@ -57,7 +57,6 @@ class GiftsController extends Controller
     {
 //        dd($request->all());
         $this->formValidatePro($request)->validate();
-        $path = $request->file('Gifts_Images')->store('public/Images');
 
         $product = (object)[
             'Gifts_Name' => $request->input('Gifts_Name'),
@@ -65,7 +64,7 @@ class GiftsController extends Controller
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
-            'Gifts_Images' => substr($path, 7)
+            'Gifts_Images' => $request->input('Gifts_Images')
         ];
 
         $newGift_id = GiftsRepos::insert($product);

@@ -38,8 +38,8 @@
 
 <div class="form-group">
     <label for="Gifts_Images" class="font-weight-bold">Image</label><br>
-    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/Images/'.$product->Gifts_Images )}}">
-    <br>
+    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/Images/'.$product->Gifts_Images )}}" >
+
     <input type="file" id="file" name="Gifts_Images"  value="{{old('Gifts_Images')?? $product->Gifts_Images}}">
 </div>
 

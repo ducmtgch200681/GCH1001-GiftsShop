@@ -15,14 +15,14 @@ class GiftsRepos
         return DB::select($sql);
     }
 
-    public static function getAllGifts()
-    {
-        $sql = 'select p.* ';
-        $sql .= 'from gifts as p ';
-        $sql .= 'order by p.Gifts_id ';
-
-        return DB::select ($sql);
-    }
+//    public static function getAllGifts()
+//    {
+//        $sql = 'select p.* ';
+//        $sql .= 'from gifts as p ';
+//        $sql .= 'order by p.Gifts_id ';
+//
+//        return DB::select ($sql);
+//    }
 
     public static function getGiftsByID($Gifts_id)
     {
@@ -42,7 +42,7 @@ class GiftsRepos
         $sql .= 'values (?, ?, ?, ?, ?, ?) ';
 
         $result =  DB::insert($sql, [$product->Gifts_Name, $product->Cate_id,
-            $product->Price, $product->Brand, $product->Gifts_Description, $product->Gifts_Images]);
+                                $product->Price, $product->Brand, $product->Gifts_Description, $product->Gifts_Images]);
         if($result){
             return DB::getPdo()->lastInsertId();
         } else {
@@ -52,7 +52,7 @@ class GiftsRepos
 
     public static function update($product)
     {
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+
 
         $sql = 'update gifts ';
         $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
@@ -63,18 +63,18 @@ class GiftsRepos
     }
 
 
-    public static function delete($Elec_id){
+    public static function delete($Gifts_id){
         $sql = 'delete from gifts ';
         $sql .= 'where Gifts_id = ? ';
 
-        return DB::delete($sql, [$Elec_id]);
+        return DB::delete($sql, [$Gifts_id]);
     }
 
 
-    public static function selectCate($Cate_id){
+    public static function selectCate($Gifts_id){
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
         $sql .= 'where p.Gifts_id = ? ';
-        return DB::select($sql, [$Cate_id]);
+        return DB::select($sql, [$Gifts_id]);
     }
 }
