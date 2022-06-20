@@ -155,7 +155,7 @@ class GiftsController extends Controller
                 'Price' => ['required'],
                 'Brand' => ['required'],
                 'Gifts_Description' => ['required'],
-                'Gifts_Images' => ['required'],
+                'Gifts_Images' => ['required']
             ]
         );
     }
