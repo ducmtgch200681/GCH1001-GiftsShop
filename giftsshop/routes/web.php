@@ -51,7 +51,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 //Customer
-
 Route::group(['prefix' => 'customer'], function(){
     Route::get('', [
         'uses' => 'CustomerController@index',
@@ -163,7 +162,7 @@ Route::group(['prefix' => 'login'], function (){
         'uses' => 'CustomerController@loginCus',
         'as' => 'customer.loginCus'
     ]);
-}); 
+});
 //Register
 Route::group(['prefix' => 'register'], function (){
     Route::get('',[
