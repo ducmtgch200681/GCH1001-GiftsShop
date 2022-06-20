@@ -43,6 +43,12 @@ class CategoryController extends Controller
     {
         $this->formValidate($request)->validate();
 
+//        $path = $request->file('Cate_image')->store('public/Images');
+//        $file = $request->file('Cate_image');
+
+//        $fileName = $file->getClientOriginalName();
+//        $this->moveFileToFolder($file, $fileName);
+
         $category = (object)[
             'Cate_Name' => $request->input('Cate_Name'),
             'Cate_Description' => $request->input('Cate_Description'),
@@ -68,12 +74,17 @@ class CategoryController extends Controller
     public function update(Request $request, $Cate_id)
     {
         if ($Cate_id != $request->input('Cate_id')) {
-            //id in query string must match id in hidden input
             return redirect()->action('CategoryController@index');
         }
 
         $this->formValidate($request)->validate(); //shortcut
 
+
+        $path = $request->file('Cate_image')->store('public/Images');
+//        $array = explode('/', $path);
+//        $path = end($array);
+        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $out->writeln($request->input('Cate_id'));
         $file = $request->file('Cate_image');
 
         $fileName = $file->getClientOriginalName();

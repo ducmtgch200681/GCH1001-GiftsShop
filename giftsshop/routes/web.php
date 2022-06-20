@@ -194,3 +194,13 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
+Route::group(['prefix' =>  'giftsshop'], function (){
+    Route::get('',[
+        'uses' => 'MainpageController@index',
+        'as' => 'mainpage.index'
+    ]);
+    Route::get('show/{Gifts_id}', [
+        'uses' => 'MainpageController@show',
+        'as' => 'mainpage.show'
+    ]);
+});
