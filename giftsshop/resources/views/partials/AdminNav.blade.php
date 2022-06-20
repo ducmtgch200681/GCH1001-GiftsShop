@@ -48,21 +48,21 @@
                 </li>
             </ul>
 
-{{--            <ul class="navbar-nav">--}}
-{{--                <li class="nav-item mr-3">--}}
-{{--                    <a class="nav-link" href="#">--}}
-{{--                        <i class="bi bi-person"></i>--}}
-{{--                        {{\Illuminate\Support\Facades\Session::has('Ad_Username')?--}}
-{{--                            \Illuminate\Support\Facades\Session::get('Ad_Username') : ''}}--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="{{route('auth.signout')}}">--}}
-{{--                        <i class="bi bi-box-arrow-left"></i>--}}
-{{--                        Logout--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
+            <ul class="navbar-nav">
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-person"></i>
+                        {{\Illuminate\Support\Facades\Session::has('Ad_Username')?
+                            \Illuminate\Support\Facades\Session::get('Ad_Username') : ''}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('auth.signout')}}">
+                        <i class="bi bi-box-arrow-left"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

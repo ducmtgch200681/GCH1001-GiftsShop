@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'AdminController@index',
         'as' => 'admin.index'
@@ -50,8 +50,26 @@ Route::group(['prefix' => 'admin'], function () {
 //    ]);
 });
 
+//Login(Admin)
+Route::group(['prefix' => 'auth'], function (){
+    Route::get('login',[
+        'uses' => 'ManualAuthController@ask',
+        'as' => 'auth.ask'
+    ]);
+
+    Route::post('login',[
+        'uses' => 'ManualAuthController@signin',
+        'as' => 'auth.signin'
+    ]);
+
+    Route::get('logout',[
+        'uses' => 'ManualAuthController@signout',
+        'as' => 'auth.signout'
+    ]);
+});
+
 //Customer
-Route::group(['prefix' => 'customer'], function(){
+Route::group(['prefix' => 'customer', 'middleware' => ['manual.auth']], function(){
     Route::get('', [
         'uses' => 'CustomerController@index',
         'as' => 'customer.index'
@@ -71,7 +89,7 @@ Route::group(['prefix' => 'customer'], function(){
 });
 
 //Category
-Route::group(['prefix' => 'category'], function () {
+Route::group(['prefix' => 'category', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'CategoryController@index',
         'as' => 'category.index'
@@ -114,7 +132,7 @@ Route::group(['prefix' => 'category'], function () {
 });
 
 //Product
-Route::group(['prefix' => 'gifts'], function () {
+Route::group(['prefix' => 'gifts', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'GiftsController@index',
         'as' => 'product.index'
@@ -156,7 +174,7 @@ Route::group(['prefix' => 'gifts'], function () {
     ]);
 });
 
-//Login(Cus)
+//Login(Customer)
 Route::group(['prefix' => 'login'], function (){
     Route::get('',[
         'uses' => 'CustomerController@loginCus',
