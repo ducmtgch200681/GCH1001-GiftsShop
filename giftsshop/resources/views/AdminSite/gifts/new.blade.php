@@ -10,7 +10,7 @@
 
         <form action="{{route('product.store')}}" method="post" enctype= "multipart/form-data">
             @csrf
-            @include('AdminSite.gifts.proFields')
+            @include('AdminSite.gifts.giftsFields')
             <button type="submit" class="btn btn-dark">Submit</button>
         </form>
     </div>

@@ -1,18 +1,22 @@
-<input type="hidden" name="Cate_id" value="{{old('Cate_id')?? $category->Cate_id}}">
-
 <div class="form-group">
-    <label for="Cate_Name" class="font-weight-bold">Name</label>
-    <input type="text" class="form-control" id="Cate_Name" name="Cate_Name" value="{{old('Cate_Name')?? $category->Cate_Name}}">
+    <label for="Price" class="font-weight-bold">Price</label>
+    <input type="text" class="form-control" id="Price" name="Price" value="{{old('Price')?? $product->Price}}">
 </div>
 
 <div class="form-group">
-    <label for="Cate_Description" class="font-weight-bold">Description</label>
-    <input type="text" class="form-control" id="Cate_Description" name="Cate_Description" value="{{old('Cate_Description')?? $category->Cate_Description}}">
+    <label for="Brand" class="font-weight-bold">Brand</label>
+    <input type="text" class="form-control" id="Brand" name="Brand" value="{{old('Brand')?? $product->Brand}}">
 </div>
 
 <div class="form-group">
-    <label for="Cate_image" class="font-weight-bold">Image</label>
-    <input type="file" name="Cate_image" id="Cate_image" value="{{old('Cate_image')?? $category->Cate_image}}">
-    <img width = 500rem; src="{{asset('image/'.$category->Cate_image )}}" />
+    <label for="Gifts_Description" class="font-weight-bold">Description</label>
+    <input type="text" class="form-control" id="Gifts_Description" name="Gifts_Description" value="{{old('Gifts_Description')?? $product->Gifts_Description}}">
 </div>
+
+<div class="form-group">
+    <label for="img" class="font-weight-bold">Image</label><br>
+    <img id="img" class="img-fluid" alt="" width="230" height="120" src="{{asset('storage/Images/'.$product->Gifts_Images )}}" alt="">
+    <input type="file" id="file" name="Gifts_Images"  value="{{old('img')?? $product->Gifts_Images}}">
+</div>
+
 
