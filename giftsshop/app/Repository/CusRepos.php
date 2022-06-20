@@ -41,11 +41,11 @@ class CusRepos
 
     public static function update($customer){
         $sql = 'update customer ';
-        $sql .= 'Cus_Username = ?, Cus_Email = ?, Cus_phone = ?, Cus_add = ?';
+        $sql .= 'set Cus_Fullname = ?, Cus_Username = ?, Cus_gender = ?, Cus_password = ?, Cus_phone = ?, Cus_DoB = ?, Cus_add = ? ';
         $sql .= 'where Cus_id = ? ';
 
-        DB::update($sql, [$customer->Cus_id, $customer->Cus_Usename, $customer->Cus_email, $customer->Phone, $customer->Address]);
-
+        return DB::select($sql, [$customer->Cus_Fullname, $customer->Cus_Username, $customer->Cus_gender, $customer->Cus_password,
+                                 $customer->Cus_phone, $customer->Cus_DoB, $customer->Cus_add, $customer->Cus_id]);
     }
 
     public static function delete($Cus_id){

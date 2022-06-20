@@ -171,20 +171,10 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 
     Route::post('',[
-        'uses' => 'GiftsController@store',
+        'uses' => 'CustomerController@store',
         'as' => 'customer.store'
     ]);
 });
-
-//admin page
-Route::group(['prefix' => 'adminpage'], function () {
-    Route::get('',[
-       'user' => 'AdminPageController@index',
-       'as' => 'adminpage.index'
-    ]);
-
-});
-
 
 //Mainpage
 Route::group(['prefix' =>  'giftsshop'], function (){
