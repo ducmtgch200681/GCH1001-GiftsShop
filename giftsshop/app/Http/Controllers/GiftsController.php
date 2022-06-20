@@ -93,19 +93,23 @@ class GiftsController extends Controller
 
         $this->formValidatePro($request)->validate();
 
-        $path = $request->file('Gifts_Images')->store('public/Images');
-        $array = explode('/', $path);
-        $path = end($array);
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln($request->input('Gift_id'));
-        $product = (object)[
+//        $path = $request->file('Gifts_Images')->store('public/Images');
+//        $array = explode('/', $path);
+//        $path = end($array);
+//        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+//        $out->writeln($request->input('Gift_id'));
+        $file = $request->file('Gifts_Images');
+        $fileName = $file->getClientOriginalName();
+        $this->moveFileToFolder($file, $fileName);
+
+        $product = [
             'Gifts_id' => $request->input('Gifts_id'),
             'Gifts_Name' => $request->input('Gifts_Name'),
             'Cate_id' => $request->input('Cate_id'),
             'Price' => $request->input('Price'),
             'Brand' => $request->input('Brand'),
             'Gifts_Description' => $request->input('Gifts_Description'),
-            'Gifts_Images' => substr($path, 0)
+            'Gifts_Images' => $fileName,
         ];
 
         GiftsRepos::update($product);
@@ -155,5 +159,15 @@ class GiftsController extends Controller
                 'Gifts_Images' => ['required'],
             ]
         );
+    }
+
+    private function moveFileToFolder($file, $fileName, $folder = 'storage/Images')
+    {
+        $file->move(public_path($folder), $fileName);
+    }
+
+    private function removeFileFromFolder($path)
+    {
+        unlink($path);
     }
 }

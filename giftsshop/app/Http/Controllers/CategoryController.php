@@ -79,16 +79,10 @@ class CategoryController extends Controller
 
         $this->formValidate($request)->validate(); //shortcut
 
-
-        $path = $request->file('Cate_image')->store('public/Images');
-//        $array = explode('/', $path);
-//        $path = end($array);
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln($request->input('Cate_id'));
         $file = $request->file('Cate_image');
-
         $fileName = $file->getClientOriginalName();
         $this->moveFileToFolder($file, $fileName);
+
         $category = [
             'Cate_id' => $request->input('Cate_id'),
             'Cate_Name' => $request->input('Cate_Name'),
@@ -141,7 +135,7 @@ class CategoryController extends Controller
         );
     }
 
-    private function moveFileToFolder($file, $fileName, $folder = 'image')
+    private function moveFileToFolder($file, $fileName, $folder = 'storage/Images')
     {
         $file->move(public_path($folder), $fileName);
     }

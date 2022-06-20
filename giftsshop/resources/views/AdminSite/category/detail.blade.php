@@ -9,6 +9,6 @@
 
     <dt class="col-sm-3">Image</dt>
 
-    <img width = 500rem; src="{{asset('storage/'.$category->Cate_image )}}" />
+    <img width = 500rem; src="{{asset('storage/Images/'.$category->Cate_image )}}" />
 
 </dl>
