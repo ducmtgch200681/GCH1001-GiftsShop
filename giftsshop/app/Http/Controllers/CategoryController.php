@@ -43,10 +43,14 @@ class CategoryController extends Controller
     {
         $this->formValidate($request)->validate();
 
+        $file = $request->file('Cate_image');
+        $fileName = $file->getClientOriginalName();
+        $this->moveFileToFolder($file, $fileName);
+
         $category = (object)[
             'Cate_Name' => $request->input('Cate_Name'),
             'Cate_Description' => $request->input('Cate_Description'),
-            'Cate_image' => $request->input('Cate_image'),
+            'Cate_image' => $fileName,
         ];
 
         $newCate_id = CateRepos::insert($category);
@@ -110,9 +114,9 @@ class CategoryController extends Controller
 
         CateRepos::delete($Cate_id);
 
-//        if (CateRepos::delete($Cate_id) === false)
-//            return redirect()->action('CategoryController@index')
-//                ->with('err', 'Please delete all the gifts before deleteing this category');
+        if (CateRepos::delete($Cate_id) === false)
+            return redirect()->action('CategoryController@index')
+                ->with('err', 'Please delete all the gifts before deleteing this category');
 
         return redirect()->action('CategoryController@index')
             ->with('msg', 'Delete Successfully');

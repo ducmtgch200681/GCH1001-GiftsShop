@@ -9,8 +9,8 @@
             <tr>
                 {{--        <th scope="col">#</th>--}}
                 <th scope="col">Name</th>
-{{--                <th scope="col">Description</th>--}}
-{{--                <th scope="col">Image</th>--}}
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
@@ -21,12 +21,12 @@
             @foreach($category as $c)
                 <tr>
                     <td>{{$c->Cate_Name}}</td>
-{{--                    <td>{{$c->Cate_Description}}</td>--}}
-{{--                    <td>--}}
-{{--                        <a href="{{route('category.show', ['Cate_id' =>$c->Cate_id])}}">--}}
-{{--                            <img src="{{asset('image/'. $c->Cate_image)}}" alt="" style="width: 30%">--}}
-{{--                        </a>--}}
-{{--                    </td>--}}
+                    <td>{{$c->Cate_Description}}</td>
+                    <td>
+                        <a href="{{route('category.show', ['Cate_id' =>$c->Cate_id])}}">
+                            <img src="{{asset('storage/images/'. $c->Cate_image)}}" alt="" style="width: 30%">
+                        </a>
+                    </td>
                     <td>
                         <a type="button" class="btn btn-primary btn-sm"
                            href="{{route('category.show', ['Cate_id' => $c->Cate_id])}}">Details

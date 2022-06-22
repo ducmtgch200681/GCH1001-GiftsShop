@@ -7,8 +7,8 @@
             <h1 class="display-4">New Category</h1>
         </div>
         @include('partials.errors')
-
-        <form action="{{route('category.store')}}" method="post">
+        <!-- To send file, please add enctype="multipart/form-data" to the tag form -->
+        <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             @include('AdminSite.category.cateFields')
             <button type="submit" class="btn btn-dark">Submit</button>

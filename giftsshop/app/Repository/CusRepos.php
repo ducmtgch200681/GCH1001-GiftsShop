@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use Illuminate\Support\Facades\DB;
 
-class CusRepos
+class  CusRepos
 {
     public static function getAllCus()
     {

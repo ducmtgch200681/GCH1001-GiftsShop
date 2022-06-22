@@ -96,7 +96,8 @@ class GiftsController extends Controller
         $fileName = $file->getClientOriginalName();
         $this->moveFileToFolder($file, $fileName);
 
-        $product = [
+        // Convert array to object using (object)
+        $product = (object)[
             'Gifts_id' => $request->input('Gifts_id'),
             'Gifts_Name' => $request->input('Gifts_Name'),
             'Cate_id' => $request->input('Cate_id'),
@@ -160,8 +161,4 @@ class GiftsController extends Controller
         $file->move(public_path($folder), $fileName);
     }
 
-    private function removeFileFromFolder($path)
-    {
-        unlink($path);
-    }
 }

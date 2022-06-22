@@ -45,17 +45,17 @@ a{
 
 .welcome-carousel-image1{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../image/image1.jpg');
+    background-image:url('../images/image1.jpg');
 }
 
 .welcome-carousel-image2{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../image/image2.jpg');
+    background-image:url('../images/image2.jpg');
 }
 
 .welcome-carousel-image3{
     box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
-    background-image:url('../image/image3.jpg');
+    background-image:url('../images/image3.jpg');
 }
 
 .sidenav {
