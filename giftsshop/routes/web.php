@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'AdminController@index',
         'as' => 'admin.index'

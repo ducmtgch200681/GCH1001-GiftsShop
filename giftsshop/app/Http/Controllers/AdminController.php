@@ -43,7 +43,7 @@ class AdminController extends Controller
             'Ad_id' => $request->input('Ad_id'),
             'Ad_Fullname' => $request->input('Ad_Fullname'),
             'Ad_Username' => $request->input('Ad_Username'),
-            'Ad_password' => Hash::make(Bcrypt($request->input('Ad_password'))),
+            'Ad_password' => Hash::make(sha1($request->input('Ad_password'))),
 
 
 
