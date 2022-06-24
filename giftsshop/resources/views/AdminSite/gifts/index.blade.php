@@ -29,7 +29,7 @@
 {{--                    <td>{{$p->Brand}}</td>--}}
                     <td>
                         <a href="{{route('product.show', ['Gifts_id' => $p->Gifts_id])}}">
-                            <img src="{{asset('storage/'.$p->Gifts_Images)}}" alt="" style="width: 350px">
+                            <img src="{{asset('storage/images/'.$p->Gifts_Images)}}" alt="" style="width: 350px">
                         </a>
                     </td>
                     <td>

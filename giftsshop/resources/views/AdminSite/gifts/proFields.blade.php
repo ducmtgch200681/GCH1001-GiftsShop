@@ -39,9 +39,10 @@
 <div class="form-group">
     <label for="Gifts_Images" class="font-weight-bold">Image</label>
     <br>
-    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/'.$product->Gifts_Images )}}" >
+    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/images/'.$product->Gifts_Images )}}" >
     <br>
-    <input type="file" id="Gifts_Images" name="Gifts_Images"  value="{{old('Gifts_Images')?? $product->Gifts_Images}}">
+    <!-- Add id file for tracking new image uploaded -->
+    <input type="file" id="file" name="Gifts_Images"  value="{{old('Gifts_Images')?? $product->Gifts_Images}}">
 </div>
 
 
