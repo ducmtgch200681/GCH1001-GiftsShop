@@ -68,7 +68,7 @@ class ManualAuthController extends Controller
                         $n=0;
                         for ($i = 0; $i < count($account); $i++) {
                             if ($username == $account[$i]->Ad_Username) {
-                                $value = Bcrypt($request->input('Ad_password'));
+                                $value = sha1($request->input('Ad_password'));
                                 if ($value != $account[$i]->Ad_password) {
                                     $n++;
                                     break;
