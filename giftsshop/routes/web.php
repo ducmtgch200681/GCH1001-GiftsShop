@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//, 'middleware' => ['manual.auth']
+
 //Admin
-//Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
 Route::group(['prefix' => 'admin', 'middleware' => []], function (){
     Route::get('', [
         'uses' => 'AdminController@index',

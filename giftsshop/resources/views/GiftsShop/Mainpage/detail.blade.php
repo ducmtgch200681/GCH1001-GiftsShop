@@ -24,8 +24,10 @@
     <dt class="col-sm-3">Description</dt>
     <dd class="col-sm-9">{{ $product->Gifts_Description }}</dd>
 
-        <dt class="col-sm-3">Price</dt>
-        <dd class="col-sm-9"><button type="button" class="btn btn-primary">{{ $product->Price }}</button></dd>
+    <dt class="col-sm-3">Price</dt>
+    <dd class="col-sm-9"><button type="button" class="btn btn-primary">{{ $product->Price }}</button></dd>
+
+
     </div>
 </dl>
 

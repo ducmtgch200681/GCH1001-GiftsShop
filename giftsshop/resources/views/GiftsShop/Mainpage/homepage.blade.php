@@ -47,6 +47,7 @@
     </div>
 
     <div class="container">
+        <br>
         <h2>The product</h2>
     </div>
     <div class="grid-container">
@@ -85,6 +86,7 @@
 
                 </div>
             </div>
+            <br>
         @endforeach
 
     </div>

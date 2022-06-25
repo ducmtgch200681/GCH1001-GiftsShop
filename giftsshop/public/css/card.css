@@ -32,6 +32,7 @@ body {
 
     display: flex;
     flex-wrap: wrap;
+    padding-left: 5%;
 }
 
 .page-wrapper {
