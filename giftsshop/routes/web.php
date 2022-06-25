@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
+//Route::group(['prefix' => 'admin', 'middleware' => ['manual.auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => []], function (){
     Route::get('', [
         'uses' => 'AdminController@index',
         'as' => 'admin.index'
@@ -202,5 +203,17 @@ Route::group(['prefix' =>  'giftsshop'], function (){
     Route::get('show/{Gifts_id}', [
         'uses' => 'MainpageController@show',
         'as' => 'mainpage.show'
+    ]);
+    Route::get('about', [
+        'uses' => 'MainpageController@about',
+        'as' => 'mainpage.about'
+    ]);
+    Route::get('contact', [
+        'uses' => 'MainpageController@contact',
+        'as' => 'mainpage.contact'
+    ]);
+    Route::get('address', [
+        'uses' => 'MainpageController@address',
+        'as' => 'mainpage.address'
     ]);
 });
