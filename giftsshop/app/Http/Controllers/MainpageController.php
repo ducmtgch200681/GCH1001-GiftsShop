@@ -26,4 +26,22 @@ class MainpageController extends Controller
             'product' => $product[0],
         ]);
     }
+
+    public function about(){
+        return view('GiftsShop.Mainpage.about', [
+
+        ]);
+    }
+
+    public function contact(){
+        return view('GiftsShop.Mainpage.contact', [
+
+        ]);
+    }
+
+    public function address(){
+        return view('GiftsShop.Mainpage.address', [
+
+        ]);
+    }
 }
