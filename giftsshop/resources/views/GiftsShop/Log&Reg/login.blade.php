@@ -5,7 +5,7 @@
         <div class="container">
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                    <figure><img src="https://cdn.shopify.com/s/files/1/0012/8122/8915/files/Gifts_for_her_NZ_10_1600x.jpg?v=1586946634" alt="sing up image"></figure>
                     <a href="{{route('customer.registerCus')}}" class="signup-image-link">Create an account</a>
                 </div>
 
