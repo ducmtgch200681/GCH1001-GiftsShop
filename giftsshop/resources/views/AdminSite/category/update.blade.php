@@ -12,6 +12,7 @@
             @include('AdminSite.category.cateFields')
 
             <button type="submit" class="btn btn-dark">Submit</button>
+            <a href="{{route('category.index')}}" class="btn btn-info">Cancel</a>
         </form>
     </div>
 @endsection
