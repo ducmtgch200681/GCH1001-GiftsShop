@@ -16,7 +16,7 @@
     <dd class="col-sm-9">{{ $product->Gifts_Name }}</dd>
 
     <dt class="col-sm-3">Type</dt>
-    <dd class="col-sm-9">{{ $categorys->Cate_Name }}</dd>
+    <dd class="col-sm-9">{{ $categories->Cate_Name }}</dd>
 
     <dt class="col-sm-3">Brand</dt>
     <dd class="col-sm-9">{{ $product->Brand }}</dd>
