@@ -1,7 +1,7 @@
 <dl class="row">
     <div class="pull-left">
     <dt class="col-sm-3">Image</dt>
-    <dd class="col-sm-9"><img width = 500rem; src="{{asset('storage/'.$product->Gifts_Images )}}" /></dd>
+    <dd class="col-sm-9"><img width = 500rem; src="{{asset('storage/Images/'.$product->Gifts_Images )}}" /></dd>
 {{--    <p class="">--}}
 {{--        <dd class="col-sm-9"><img width="90rem"; src="{{asset('image/image1.jpg')}}" /></dd>--}}
 {{--        <dd class="col-sm-9"><img width="90rem"; src="{{asset('image/image2.jpg')}}" /></dd>--}}

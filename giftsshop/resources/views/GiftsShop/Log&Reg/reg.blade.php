@@ -14,7 +14,10 @@
                             <input type="text" name="Cus_Fullname" id="Cus_Fullname" placeholder="Your Name" value="{{old('Cus_Fullname')?? $customer->Cus_Fullname}}">
                         </div>
                         <div class="form-group">
-                            <label for="Cus_Username"><i class="zmdi zmdi-email"></i></label>
+                            <label for="Cus_Username">
+                                <i class="zmdi zmdi-account-o"></i>
+
+                            </label>
                             <input type="text" name="Cus_Username" id="Cus_Username" placeholder="Your Username" value="{{old('Cus_Username')?? $customer->Cus_Username}}">
                         </div>
                         <div class="form-group">
@@ -22,19 +25,27 @@
                             <input type="password" name="Cus_password" id="Cus_password" placeholder="Password" value="{{old('Cus_password')?? $customer->Cus_password}}">
                         </div>
                         <div class="form-group">
-                            <label for="Cus_gender"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <label for="Cus_gender">
+                                <i class="zmdi zmdi-male-female"></i>
+                            </label>
                             <input type="text" name="Cus_gender" id="Cus_gender" placeholder="Your Gender" value="{{old('Cus_gender')?? $customer->Cus_gender}}">
                         </div>
                         <div class="form-group">
-                            <label for="Cus_phone"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <label for="Cus_phone">
+                                <i class="zmdi zmdi-phone"></i>
+                            </label>
                             <input type="tel" name="Cus_phone" id="Cus_phone" placeholder="Your Telephone" value="{{old('Cus_phone')?? $customer->Cus_phone}}">
                         </div>
                         <div class="form-group">
-                            <label for="Cus_DoB"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <label for="Cus_DoB">
+                                <i class="zmdi zmdi-mood"></i>
+                            </label>
                             <input type="date" name="Cus_DoB" id="Cus_DoB" placeholder="Your Date of Birth" value="{{old('Cus_DoB')?? $customer->Cus_DoB}}">
                         </div>
                         <div class="form-group">
-                            <label for="Cus_add"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <label for="Cus_add">
+                                <i class="zmdi zmdi-truck"></i>
+                            </label>
                             <input type="text" name="Cus_add" id="Cus_add" placeholder="Your Address" value="{{old('Cus_add')?? $customer->Cus_add}}">
                         </div>
 
@@ -50,10 +61,14 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                    <figure><img src="https://media.houseandgarden.co.uk/photos/618947b6f9cf3d171adad488/3:4/w_1278,h_1704,c_limit/provencale-chateau-in-france-house-27nov17-michael-sinclair-05_b.jpg" alt="sing up image"></figure>
                     <a href="{{route('customer.loginCus')}}" class="signup-image-link">I am already member</a>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+{{--@section('script')--}}
+{{--    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>--}}
+{{--@endsection--}}

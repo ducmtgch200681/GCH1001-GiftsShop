@@ -137,9 +137,4 @@ class CategoryController extends Controller
     {
         $file->move(public_path($folder), $fileName);
     }
-
-    private function removeFileFromFolder($path)
-    {
-        unlink($path);
-    }
 }

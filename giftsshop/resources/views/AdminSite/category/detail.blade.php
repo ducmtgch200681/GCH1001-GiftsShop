@@ -10,6 +10,6 @@
     <dt class="col-sm-3">Image</dt>
 
     <!-- Change to correct path that store the images uploaded -->
-    <img width = 500rem; src="{{asset('storage/images/'.$category->Cate_image )}}" />
+    <img width = 500rem; src="{{asset('storage/Images/'.$category->Cate_image )}}" />
 
 </dl>

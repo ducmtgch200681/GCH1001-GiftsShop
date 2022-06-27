@@ -14,7 +14,7 @@
                 <th scope="col">Type</th>
 {{--                <th scope="col">Price($)</th>--}}
 {{--                <th scope="col">Brand</th>--}}
-                <th scope="col">Image</th>
+{{--                <th scope="col">Image</th>--}}
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
@@ -23,15 +23,29 @@
             <tbody>
             @foreach($product as $p)
                 <tr>
-                    <td>{{$p->Gifts_Name}}</td>
-                    <td>{{$p->CategoryName}}</td>
+                    <td>
+                        <div class="tooltips">
+                            {{$p->Gifts_Name}}
+                            <div class="tooltipimage">
+                                <img src="{{asset('storage/Images/'.$p->Gifts_Images)}}" alt="" style="width: 350px"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tooltips">
+                            {{$p->CategoryName}}
+                            <div class="tooltipimage">
+                                <img src="{{asset('storage/Images/'. $p->CategoryImage)}}" alt="" style="width: 350px"/>
+                            </div>
+                        </div>
+                    </td>
 {{--                    <td>{{$p->Price}}</td>--}}
 {{--                    <td>{{$p->Brand}}</td>--}}
-                    <td>
-                        <a href="{{route('product.show', ['Gifts_id' => $p->Gifts_id])}}">
-                            <img src="{{asset('storage/images/'.$p->Gifts_Images)}}" alt="" style="width: 350px">
-                        </a>
-                    </td>
+{{--                    <td>--}}
+{{--                        <a href="{{route('product.show', ['Gifts_id' => $p->Gifts_id])}}">--}}
+{{--                            <img src="{{asset('storage/Images/'.$p->Gifts_Images)}}" alt="" style="width: 350px">--}}
+{{--                        </a>--}}
+{{--                    </td>--}}
                     <td>
                         <a type="button" class="btn btn-primary btn-sm"
                            href="{{route('product.show', ['Gifts_id' => $p->Gifts_id])}}">Details

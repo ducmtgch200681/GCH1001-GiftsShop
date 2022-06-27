@@ -1,6 +1,8 @@
 body {
     padding-top: 4rem;
     padding-bottom: 3rem;
+    background: url("https://img.freepik.com/free-photo/christmas-background-with-text-space_53876-128580.jpg?w=1380&t=st=1656348160~exp=1656348760~hmac=a404524ac1ccf524802e5001fd113a1a45460a2d6a9738a1e97e381ebf8c6d2f") no-repeat;
+    background-size: cover;
 }
 .bg-primary-custom{
     background-color: black;

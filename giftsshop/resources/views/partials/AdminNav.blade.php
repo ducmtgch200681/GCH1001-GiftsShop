@@ -112,7 +112,7 @@
         </li>
         <div class="sidebar-footer">
             <li class="bottom">
-                <a class="nav-link" href="#" id="customerDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link" href="#" id="adminDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-person"></i>
                     {{\Illuminate\Support\Facades\Session::has('Ad_Username')?
@@ -120,9 +120,10 @@
                 </a>
             </li>
             <li class="bottom">
-                <a class="nav-link" href="{{route('auth.signout')}}" id="customerDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link" href="{{route('auth.signout')}}" id="adminDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-box-arrow-right"></i>
+
                     Logout
                 </a>
             </li>
