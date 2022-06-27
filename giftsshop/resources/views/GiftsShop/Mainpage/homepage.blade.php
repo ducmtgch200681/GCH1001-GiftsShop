@@ -48,7 +48,7 @@
 
     <div class="container">
         <br>
-        <h2>The product</h2>
+        <h1 class="text-white">The product</h1>
     </div>
     <div class="grid-container">
         @foreach($product as $s)
@@ -58,12 +58,12 @@
                         <div class="el-wrapper">
                             <div class="box-up">
                                 <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
-                                    <img class="img" src="{{asset('storage/'.$s->Gifts_Images )}}" alt="">
+                                    <img class="img" src="{{asset('storage/'.$s->Gifts_Images )}}" alt="" />
                                 </a>
                                 <div class="img-info">
                                     <div class="info-inner">
-                                        <span class="p-name">I feel like Pablo</span>
-                                        <span class="p-company">Yeezy</span>
+                                        <span class="p-name">{{$s->Gifts_Name}}</span>
+                                        <span class="p-company">{{$s->Brand}}</span>
                                     </div>
                                 </div>
 
@@ -75,7 +75,7 @@
                                 </div>
 
                                 <a class="cart" href="#">
-                                    <span class="price">$120</span>
+                                    <span class="price">{{$s->Price}}</span>
                                     <span class="add-to-cart">
                                     <span class="txt">Add in cart</span>
                                     </span>

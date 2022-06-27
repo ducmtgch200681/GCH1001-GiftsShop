@@ -3,7 +3,8 @@
 @section('main')
 
     <div class="container1">
-        <h2>There are {{count($product)}} product(s)</h2>
+        <br>
+        <h2 class="text-white">There are {{count($product)}} product(s)</h2>
     </div>
 
 

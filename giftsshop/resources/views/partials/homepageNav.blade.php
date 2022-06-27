@@ -116,7 +116,7 @@
 
                         @csrf
                         <input class="form-control" placeholder="Search any product..." type="text" name="search" value="{{$search ?? ''}}">
-                        <button class="col-md-1" type="submit">
+                        <button class="col-md-1 btn btn-danger" type="submit">
                             <span class="iconify" data-icon="bx:search" data-width="24" data-height="24"></span>
                         </button>
                 </form>

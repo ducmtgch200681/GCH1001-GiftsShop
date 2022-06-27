@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class CateRepos
 {
-    public static function getAllCate() {
-        $sql = 'select c.* ';
-        $sql .= 'from category as c ';
-        $sql .= 'order by c.Cate_Name';
-
-        return DB::select ($sql);
-    }
+//    public static function getAllCate() {
+//        $sql = 'select c.* ';
+//        $sql .= 'from category as c ';
+//        $sql .= 'order by c.Cate_Name';
+//
+//        return DB::select ($sql);
+//    }
 
     //CateNav
-    public static function getCateId()
+    public static function getAllCate()
     {
         $sql = 'select ca.* ';
         $sql .= 'from category as ca ';
