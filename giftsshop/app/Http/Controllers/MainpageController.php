@@ -11,6 +11,8 @@ class MainpageController extends Controller
 {
     public function index(){
         $category = CateRepos::getAllCate();
+
+
         $product = MainpageRepos::getAllGift();
         return view('GiftsShop.Mainpage.homepage',
             [
@@ -21,19 +23,18 @@ class MainpageController extends Controller
 
     public function show($Gifts_id){
         $category = CateRepos::getCatenamebyGiftsID($Gifts_id);
+//        $category = CateRepos::getCateId();
         $product = MainpageRepos::getGiftsById($Gifts_id);
-        return view('GiftsShop.Mainpage.show', [
-            'category' => $category[0],
-            'product' => $product[0],
-        ]);
+        return view('GiftsShop.Mainpage.show',
+            [
+                'category' => $category[0],
+                'product' => $product[0],
+            ]);
     }
 
     public function search(Request $request)
     {
         $category = CateRepos::getCateId();
-//        $search = (object)[
-//            'search' => $request->input('search'),
-//        ];
         $search = $request->input('search');
         $product = MainpageRepos::getGiftsByKey($search);
         return view('GiftsShop.Mainpage.search',
@@ -60,20 +61,23 @@ class MainpageController extends Controller
 
 
     public function about(){
+        $category = CateRepos::getCateId();
         return view('GiftsShop.Mainpage.about', [
-
+            'category'=> $category,
         ]);
     }
 
     public function contact(){
+        $category = CateRepos::getCateId();
         return view('GiftsShop.Mainpage.contact', [
-
+            'category'=> $category,
         ]);
     }
 
     public function address(){
+        $category = CateRepos::getCateId();
         return view('GiftsShop.Mainpage.address', [
-
+            'category'=> $category,
         ]);
     }
 }

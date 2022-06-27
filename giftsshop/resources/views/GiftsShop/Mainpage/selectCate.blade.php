@@ -20,8 +20,6 @@
                                         <span class="p-name">{{$s->Gifts_Name}}</span>
                                         <span class="p-company">{{$s->Brand}}</span>
                                     </div>
-                                    {{--                                    <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span>--}}
-                                    {{--                                    </div>--}}
                                 </div>
 
                         </div>
