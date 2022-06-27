@@ -52,8 +52,6 @@ class GiftsRepos
 
     public static function update($product)
     {
-
-
         $sql = 'update gifts ';
         $sql .= 'set Gifts_Name = ?, Cate_id = ?, Price = ?, Brand = ?, Gifts_Description = ?, Gifts_Images = ? ';
         $sql .= 'where Gifts_id = ? ';
@@ -71,7 +69,7 @@ class GiftsRepos
     }
 
 
-    public static function selectCate($Cate_id){
+    public static function selectCate ($Cate_id) {
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
         $sql .= 'where p.Cate_id = ? ';

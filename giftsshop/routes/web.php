@@ -207,10 +207,10 @@ Route::group(['prefix' =>  'giftsshop'], function (){
         'as' => 'mainpage.show'
     ]);
 
-//    Route::get('search',[
-//        'uses' => 'MainpageController@search',
-//        'as' => 'mainpage.search'
-//    ]);
+    Route::post('search',[
+        'uses' => 'MainpageController@search',
+        'as' => 'mainpage.search'
+    ]);
 
     Route::get('select/{Cate_id}',[
         'uses' => 'MainpageController@selectCategory',

@@ -28,18 +28,21 @@ class MainpageController extends Controller
         ]);
     }
 
-//    public function search(Request $request)
-//    {
-//        $category = CateRepos::getAllCate();
-//        $search = $request->input('search');
-//        $product = MainpageRepos::getGiftsByKey($search);
-//        return view('GiftsShop.Mainpage.search',
-//            [
-//                'category' => $category,
-//                'product' => $product,
-//                'search'=> $search
-//            ]);
-//    }
+    public function search(Request $request)
+    {
+        $category = CateRepos::getCateId();
+//        $search = (object)[
+//            'search' => $request->input('search'),
+//        ];
+        $search = $request->input('search');
+        $product = MainpageRepos::getGiftsByKey($search);
+        return view('GiftsShop.Mainpage.search',
+            [
+                'category' => $category,
+                'product' => $product,
+                'search'=> $search
+            ]);
+    }
 
     public function selectCategory($Cate_id){
 
@@ -47,7 +50,7 @@ class MainpageController extends Controller
 
         $product = GiftsRepos::selectCate($Cate_id);
 
-        return route('GiftsShop.Mainpage.selectCate',
+        return view('GiftsShop.Mainpage.selectCate',
             [
                 'category'=> $category,
                 'product' => $product,

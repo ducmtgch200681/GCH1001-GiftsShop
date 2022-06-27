@@ -80,11 +80,11 @@
         </ul>
 
         <form
-{{--            action="{{route('mainpage.search')}}" --}}
-              method="get" class="form-inline ">
+            action="{{route('mainpage.search')}}"
+              method="post" class="form-inline ">
             @csrf
             <input class="flipkart-navbar-input col-md-7" placeholder="Search for Products" name="search"
-{{--                   value="{{$search ?? ''}}" --}}
+                   value="{{$search ?? ''}}"
             >
             <button class="flipkart-navbar-button col-md-1" >
                 <svg>
