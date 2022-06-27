@@ -29,8 +29,9 @@
         color: #212529;
         text-align: left;
         background-color: #f5f8fa;
-        background-image: url(https://th.bing.com/th/id/R.19f7630dbaff3652e139e0a19d2bb4b9?rik=fLPkI8UY%2fXmkdA&riu=http%3a%2f%2fspasalon.com%2fwp-content%2fuploads%2f2012%2f02%2flight-blue-background.jpg&ehk=BqDx6vEEq59oq8WOLEC6vL%2bwkykNX4rQ9LKpqnPBbOA%3d&risl=&pid=ImgRaw&r=0);
-
+        /*background: url("https://th.bing.com/th/id/R.19f7630dbaff3652e139e0a19d2bb4b9?rik=fLPkI8UY%2fXmkdA&riu=http%3a%2f%2fspasalon.com%2fwp-content%2fuploads%2f2012%2f02%2flight-blue-background.jpg&ehk=BqDx6vEEq59oq8WOLEC6vL%2bwkykNX4rQ9LKpqnPBbOA%3d&risl=&pid=ImgRaw&r=0") no-repeat;*/
+        background: url("https://img.freepik.com/free-photo/christmas-background-with-text-space_53876-128580.jpg?w=1380&t=st=1656348160~exp=1656348760~hmac=a404524ac1ccf524802e5001fd113a1a45460a2d6a9738a1e97e381ebf8c6d2f") no-repeat;
+        background-size: cover;
     }
 
     .navbar-laravel {

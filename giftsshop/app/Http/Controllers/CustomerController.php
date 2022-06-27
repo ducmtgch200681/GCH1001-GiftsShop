@@ -102,9 +102,9 @@ class CustomerController
             'Cus_add' => $request->input('Cus_add')
         ];
 
-        $newCus_id = CusRepos::insert($customer);
+
         return redirect()
-            ->action('CustomerController@loginCus');
-//            ->with('msg', 'New customer with id: '.$newCus_id.' has been inserted');
+            ->action('MainpageController@index');
+
     }
 }

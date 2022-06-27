@@ -156,7 +156,7 @@ class GiftsController extends Controller
         );
     }
 
-    private function moveFileToFolder($file, $fileName, $folder = 'storage/Images')
+    private function moveFileToFolder($file, $fileName, $folder = 'storage/Images/')
     {
         $file->move(public_path($folder), $fileName);
     }
