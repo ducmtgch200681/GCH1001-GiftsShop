@@ -23,4 +23,13 @@ class MainpageRepos
 
         return DB::select ($sql, [$Gifts_id]);
     }
+
+    public static function getGiftsByKey($search){
+        $name = '%'.$search.'%';
+        $sql = 'select * ';
+        $sql .= 'from gifts as p ';
+        $sql .= 'where p.Gifts_Name like ? ';
+
+        return DB::select ($sql, [$name]);
+    }
 }

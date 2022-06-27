@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Home page </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
     <link rel="stylesheet" href="{{asset('css/card.css')}}">
 </head>
 <body>
@@ -21,11 +20,17 @@
 
 
 <main>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff416c 0%, #ff4b2b 100%);
+            font-size: 12px;
+        }
+    </style>
     @yield('main')
 </main>
 
 <footer>
-{{--    @include('partials.footerNav')--}}
+    @include('partials.footerNav')
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

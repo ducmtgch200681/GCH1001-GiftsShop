@@ -47,6 +47,7 @@
     </div>
 
     <div class="container">
+        <br>
         <h2>The product</h2>
     </div>
     <div class="grid-container">
@@ -58,7 +59,7 @@
                             <div class="box-up">
                                 <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
                                     <img class="img" src="{{asset('storage/'.$s->Gifts_Images )}}" alt="">
-{{--                                </a>--}}
+                                </a>
                                 <div class="img-info">
                                     <div class="info-inner">
                                         <span class="p-name">I feel like Pablo</span>
@@ -67,6 +68,7 @@
 {{--                                    <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span>--}}
 {{--                                    </div>--}}
                                 </div>
+
                             </div>
 
                             <div class="box-down">
@@ -85,6 +87,7 @@
 
                 </div>
             </div>
+            <br>
         @endforeach
 
     </div>

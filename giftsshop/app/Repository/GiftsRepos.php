@@ -71,10 +71,10 @@ class GiftsRepos
     }
 
 
-    public static function selectCate($Gifts_id){
+    public static function selectCate($Cate_id){
         $sql = 'select p.* ';
         $sql .= 'from gifts as p ';
-        $sql .= 'where p.Gifts_id = ? ';
-        return DB::select($sql, [$Gifts_id]);
+        $sql .= 'where p.Cate_id = ? ';
+        return DB::select($sql, [$Cate_id]);
     }
 }
