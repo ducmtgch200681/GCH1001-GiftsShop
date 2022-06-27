@@ -12,6 +12,7 @@
             @csrf
             @include('AdminSite.gifts.proFields')
             <button type="submit" class="btn btn-dark">Submit</button>
+            <a href="{{route('product.index')}}" class="btn btn-info">Cancel</a>
         </form>
     </div>
 @endsection
