@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\AdminRepos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -48,10 +49,14 @@ class ManualAuthController extends Controller
 
 
     public function signout(){
-        if (Session::has('Ad_Username')){
+        if (Session::has('Ad_Username'))
+        {
             Session::forget('Ad_Username');
+            Session::flush();
+            Auth::logout();
+
         }
-        return redirect()->action('ManualAuthController@ask');
+        return redirect()->route('auth.ask');
     }
 
 
