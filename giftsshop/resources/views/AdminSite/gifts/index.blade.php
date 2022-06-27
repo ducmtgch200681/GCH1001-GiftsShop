@@ -27,7 +27,7 @@
                         <div class="tooltips">
                             {{$p->Gifts_Name}}
                             <div class="tooltipimage">
-                                <img src="{{asset('storage/images/'.$p->Gifts_Images)}}" alt="" style="width: 350px"/>
+                                <img src="{{asset('storage/iIages/'.$p->Gifts_Images)}}" alt="" style="width: 350px"/>
                             </div>
                         </div>
                     </td>
@@ -35,7 +35,7 @@
                         <div class="tooltips">
                             {{$p->CategoryName}}
                             <div class="tooltipimage">
-                                <img src="{{asset('storage/images/'. $p->CategoryImage)}}" alt="" style="width: 350px"/>
+                                <img src="{{asset('storage/Images/'. $p->CategoryImage)}}" alt="" style="width: 350px"/>
                             </div>
                         </div>
                     </td>

@@ -16,7 +16,7 @@
                     <div class="el-wrapper">
                         <div class="box-up">
                             <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
-                                <img class="img" src="{{asset('storage/'.$s->Gifts_Images )}}" alt="">
+                                <img class="img" src="{{asset('storage/Images/'.$s->Gifts_Images )}}" alt="">
                             </a>
                             <div class="img-info">
                                 <div class="info-inner">

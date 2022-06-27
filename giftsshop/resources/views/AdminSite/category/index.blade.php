@@ -24,7 +24,7 @@
                         <div class="tooltips">
                             {{$c->Cate_Name}}
                             <div class="tooltipimage">
-                                <img src="{{asset('storage/images/'. $c->Cate_image)}}" alt="" style="width: 350px"/>
+                                <img src="{{asset('storage/Images/'. $c->Cate_image)}}" alt="" style="width: 350px"/>
                             </div>
                         </div>
                     </td>

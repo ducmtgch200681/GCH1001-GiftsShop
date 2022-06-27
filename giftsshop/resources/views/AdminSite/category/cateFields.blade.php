@@ -13,7 +13,7 @@
 <div class="form-group">
     <label for="Cate_image" class="font-weight-bold">Image</label>
     <br>
-    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/images/'.$category->Cate_image )}}" >
+    <img id="img" class="img-fluid" alt="" style="max-width: 200px; max-height: 150px" src="{{asset('storage/Images/'.$category->Cate_image )}}" >
     <br>
     <input type="file" name="Cate_image" id="file" value="{{old('Cate_image')?? $category->Cate_image}}">
 </div>
