@@ -1,10 +1,12 @@
 @extends('masters.giftsshopMaster')
 
 @section('main')
+
     <div class="container1">
         <br>
-        <h2 class="text-white">There are {{count($product)}} gift(s)</h2>
+        <h2 class="text-white">There are {{count($product)}} product(s)</h2>
     </div>
+
 
     <div class="grid-container">
         @foreach($product as $s)
@@ -16,12 +18,12 @@
                             <a  href="{{route('mainpage.show', ['Gifts_id' => $s->Gifts_id])}}">
                                 <img class="img" src="{{asset('storage/'.$s->Gifts_Images )}}" alt="">
                             </a>
-                                <div class="img-info">
-                                    <div class="info-inner">
-                                        <span class="p-name">{{$s->Gifts_Name}}</span>
-                                        <span class="p-company">{{$s->Brand}}</span>
-                                    </div>
+                            <div class="img-info">
+                                <div class="info-inner">
+                                    <span class="p-name">{{$s->Gifts_Name}}</span>
+                                    <span class="p-company">{{$s->Brand}}</span>
                                 </div>
+                            </div>
 
                         </div>
                         <div class="box-down">
@@ -46,5 +48,3 @@
     </div>
 
 @endsection
-
-

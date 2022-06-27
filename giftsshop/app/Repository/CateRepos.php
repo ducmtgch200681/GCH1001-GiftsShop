@@ -3,20 +3,20 @@
 namespace App\Repository;
 
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Utils;
+
 
 class CateRepos
 {
-    public static function getAllCate() {
-        $sql = 'select c.* ';
-        $sql .= 'from category as c ';
-        $sql .= 'order by c.Cate_Name';
-
-        return DB::select ($sql);
-    }
+//    public static function getAllCate() {
+//        $sql = 'select c.* ';
+//        $sql .= 'from category as c ';
+//        $sql .= 'order by c.Cate_Name';
+//
+//        return DB::select ($sql);
+//    }
 
     //CateNav
-    public static function getCateId()
+    public static function getAllCate()
     {
         $sql = 'select ca.* ';
         $sql .= 'from category as ca ';
@@ -38,7 +38,7 @@ class CateRepos
     {
         $sql = 'select c.* ';
         $sql .= 'from category as c ';
-        $sql .= 'join gifts as p on c.Cate_Id = p.Cate_id ';
+        $sql .= 'join gifts as p on c.Cate_id = p.Cate_id ';
         $sql .= 'where p.Gifts_id = ? ';
 
         return DB::select($sql, [$Gifts_id]);
