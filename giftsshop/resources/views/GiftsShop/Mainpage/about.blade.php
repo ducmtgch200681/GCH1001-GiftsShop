@@ -2,6 +2,12 @@
 
 @section('main')
     <style>
+        h3{
+            color: white;
+        }
+        h5{
+            color: white;
+        }
         img {
             margin-left: 25%;
             width: 50%;

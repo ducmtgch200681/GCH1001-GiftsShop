@@ -271,32 +271,52 @@
                                 <input class="app-form-control" placeholder="EMAIL">
                             </div>
                             <div class="app-form-group">
-                                <input class="app-form-control" placeholder="CONTACT NO">
+                                <input class="app-form-control" placeholder="CONTACT TO">
                             </div>
                             <div class="app-form-group message">
                                 <input class="app-form-control" placeholder="MESSAGE">
                             </div>
                             <div class="app-form-group buttons">
-                                <button class="app-form-button">CANCEL</button>
-                                <button class="app-form-button">SEND</button>
+                                <a href="{{route('mainpage.index')}}"><button class="app-form-button">CANCEL</button></a>
+                                <button class="app-form-button" data-toggle="modal" data-target="#modal">SEND</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="credits">
-                inspired by
-                <a class="credits-link" href="https://dribbble.com/shots/2666271-Contact" target="_blank">
-                    <svg class="dribbble" viewBox="0 0 200 200">
-                        <g stroke="#ffffff" fill="none">
-                            <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
-                            <path d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345" stroke-width="20"></path>
-                            <path d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951" stroke-width="20"></path>
-                            <path d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103" stroke-width="20"></path>
-                        </g>
-                    </svg>
-                    free templates
-                </a>
+{{--            <div class="credits">--}}
+{{--                inspired by--}}
+{{--                <a class="credits-link" href="https://dribbble.com/shots/2666271-Contact" target="_blank">--}}
+{{--                    <svg class="dribbble" viewBox="0 0 200 200">--}}
+{{--                        <g stroke="#ffffff" fill="none">--}}
+{{--                            <circle cx="100" cy="100" r="90" stroke-width="20"></circle>--}}
+{{--                            <path d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345" stroke-width="20"></path>--}}
+{{--                            <path d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951" stroke-width="20"></path>--}}
+{{--                            <path d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103" stroke-width="20"></path>--}}
+{{--                        </g>--}}
+{{--                    </svg>--}}
+{{--                    free templates--}}
+{{--                </a>--}}
+{{--            </div>--}}
+
+            <div class="modal" tabindex="-1" id="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">The Giftshop</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your message has been sent, thanks for contacting us</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="{{route('mainpage.index')}}"><button type="button" class="btn btn-primary">Back To Homepage</button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
