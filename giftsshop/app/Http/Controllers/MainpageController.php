@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\CateRepos;
+use App\Repository\GiftsRepos;
 use App\Repository\MainpageRepos;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,34 @@ class MainpageController extends Controller
             'product' => $product[0],
         ]);
     }
+
+//    public function search(Request $request)
+//    {
+//        $category = CateRepos::getAllCate();
+//        $search = $request->input('search');
+//        $product = MainpageRepos::getGiftsByKey($search);
+//        return view('GiftsShop.Mainpage.search',
+//            [
+//                'category' => $category,
+//                'product' => $product,
+//                'search'=> $search
+//            ]);
+//    }
+
+    public function selectCategory($Cate_id){
+
+        $category = CateRepos::getCateId();
+
+        $product = GiftsRepos::selectCate($Cate_id);
+
+        return route('GiftsShop.Mainpage.selectCate',
+            [
+                'category'=> $category,
+                'product' => $product,
+
+            ]);
+    }
+
 
     public function about(){
         return view('GiftsShop.Mainpage.about', [

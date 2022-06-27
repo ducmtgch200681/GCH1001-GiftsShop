@@ -71,7 +71,7 @@ Route::group(['prefix' => 'auth'], function (){
 });
 
 //Customer
-Route::group(['prefix' => 'customer', ], function(){
+Route::group(['prefix' => 'customer', 'middleware' => ['manual.auth']], function(){
     Route::get('', [
         'uses' => 'CustomerController@index',
         'as' => 'customer.index'
@@ -91,7 +91,7 @@ Route::group(['prefix' => 'customer', ], function(){
 });
 
 //Category
-Route::group(['prefix' => 'category',], function () {
+Route::group(['prefix' => 'category', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'CategoryController@index',
         'as' => 'category.index'
@@ -134,7 +134,7 @@ Route::group(['prefix' => 'category',], function () {
 });
 
 //Product
-Route::group(['prefix' => 'gifts', ], function () {
+Route::group(['prefix' => 'gifts', 'middleware' => ['manual.auth']], function () {
     Route::get('', [
         'uses' => 'GiftsController@index',
         'as' => 'product.index'
@@ -196,6 +196,7 @@ Route::group(['prefix' => 'register'], function (){
     ]);
 });
 
+//giftsshop
 Route::group(['prefix' =>  'giftsshop'], function (){
     Route::get('',[
         'uses' => 'MainpageController@index',
@@ -205,6 +206,17 @@ Route::group(['prefix' =>  'giftsshop'], function (){
         'uses' => 'MainpageController@show',
         'as' => 'mainpage.show'
     ]);
+
+//    Route::get('search',[
+//        'uses' => 'MainpageController@search',
+//        'as' => 'mainpage.search'
+//    ]);
+
+    Route::get('select/{Cate_id}',[
+        'uses' => 'MainpageController@selectCategory',
+        'as' => 'mainpage.select'
+    ]);
+
     Route::get('about', [
         'uses' => 'MainpageController@about',
         'as' => 'mainpage.about'
