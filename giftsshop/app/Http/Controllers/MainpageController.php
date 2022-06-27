@@ -22,11 +22,13 @@ class MainpageController extends Controller
     }
 
     public function show($Gifts_id){
-        $category = CateRepos::getCatenamebyGiftsID($Gifts_id);
+        $category = CateRepos::getAllCate();
+        $categories = CateRepos::getCatenamebyGiftsID($Gifts_id);
         $product = MainpageRepos::getGiftsById($Gifts_id);
         return view('GiftsShop.Mainpage.show',
             [
-                'category' => $category[0],
+                'category' => $category,
+                'categories' => $categories[0],
                 'product' => $product[0],
             ]);
     }

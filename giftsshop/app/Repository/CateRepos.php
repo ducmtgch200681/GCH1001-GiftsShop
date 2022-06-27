@@ -38,7 +38,7 @@ class CateRepos
     {
         $sql = 'select c.* ';
         $sql .= 'from category as c ';
-        $sql .= 'join gifts as p on c.Cate_Id = p.Cate_id ';
+        $sql .= 'join gifts as p on c.Cate_id = p.Cate_id ';
         $sql .= 'where p.Gifts_id = ? ';
 
         return DB::select($sql, [$Gifts_id]);
