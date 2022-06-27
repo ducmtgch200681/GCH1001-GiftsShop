@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class GiftsRepos
 {
     public static function getAllProductWithCateName(){
-        $sql =' select p.*, c.Cate_Name as CategoryName ';
+        $sql =' select p.*, c.Cate_Name as CategoryName, c.Cate_image as CategoryImage ';
         $sql .='from gifts as p ';
         $sql .='join category as c on p.Cate_id = c.Cate_id ';
         $sql .='order by p.Gifts_Name ';
